@@ -1,0 +1,17 @@
+.bgMostaza{
+    background-color: #D39914;
+}
+.bgVerde {
+    background-color: #08824C;
+}
+.wdh100 {
+    width: 100%;
+}
+.bordeRedondo {
+    border-radius: 20px;
+}
+.fontMegrim {
+    font-family: 'Megrim', cursive;
+    font-size: 25px;
+    color: black;
+}

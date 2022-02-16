@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <title>Viejas al hilo</title>
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Megrim&family=Raleway:ital,wght@1,200&family=Zen+Kaku+Gothic+New:wght@500&display=swap" rel="stylesheet">
+    <!-- MI CSS -->
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+
+
+
+  <body class="contenedorPadreBody container">
+
+    <!-- Aquí se incluye el logo, el carrito de compras y la ubicación-->
+    <div class="headIndex row">
+      <div class="headLogo col-md-12 d-flex justify-content-between wdh100"> 
+        <div class="d-flex flex-column justify-content-center">        
+          <img src="assets/img/iconos/ubicacion.gif" alt="ubicacion">
+        </div>
+        <div>
+          <img src="assets/img/iconos/logoHorizontal.png" alt="Logo">
+        </div>
+        <div class="d-flex flex-column justify-content-center"> 
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+              <img src="assets/img/iconos/carritoCompras.png" alt="carrito">
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Viejas al Hilo</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body modalCarrito">
+
+                  </div>
+                  <div class="modal-footer">
+                    <p>Precio Total: <span id="precioTotal">0</span></p>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                  </div>
+                </div>
+              </div>
+            </div>                 
+        </div>  
+      </div> 
+      <!-- Aquí comienza el nav -->
+      <div class="bgMostaza wdh100 col-md-12 my-1 bordeRedondo">
+        <ul class="nav d-flex justify-content-center">
+          <li class="nav-item">
+            <a id="botonTermos" class="nav-link fontMegrim" href="#"><strong>Termos</strong></a>
+          </li>
+          <li class="nav-item">
+            <a id="botonBolsos" class="nav-link fontMegrim" href="#"><strong>Bolsos</strong></a>
+          </li>
+          <li class="nav-item">
+            <a id="botonMates" class="nav-link fontMegrim" href="#"><strong>Mates</strong></a>
+          </li>
+        </ul>       
+      </div>
+
+      <div class="col-md-12">
+        <select id="filtrarMate">
+          <option value="todos">Todos</option>
+          <option value="azul">Azul</option>
+          <option value="blanco">Blanco</option>
+          <option value="caramelo">Caramelo</option>
+          <option value="carmin">Carmin</option>
+          <option value="celeste">Celeste</option>
+          <option value="fucsia">Fucsia</option>
+          <option value="lila">Lila</option>
+          <option value="rosa">Rosa</option>
+          <option value="terracota">Terracota</option>
+          <option value="turqueza">Turqueza</option>
+          <option value="verde">Verde</option>
+          <option value="violeta">Violeta</option>
+          <option value="marron">Marrón</option>
+          <option value="naranja">Naranja</option>
+          <option value="negro">Negro</option>
+          <option value="rojo">Rojo</option>
+        </select>
+      </div>
+
+      <div class="todosMates col-md-12 d-flex flex-wrap justify-content-between">
+
+      </div>
+      <div class="todosBolsos col-md-12">
+
+      </div>
+      <div class="todosTermos col-md-12">
+
+      </div>
+    </div>
+      <!-- AHORA COMIENZA EL MAIN DE MI INDEX -->
+      <div class="mainIndex row my-1">
+        <div class="andinista col-md-12">
+          <img src="assets/img/andinista.jpg" class="bordeRedondo" alt="Img">
+        </div>
+        <div class="col-md-12 d-flex justify-content-center">
+          <h3 class="m-2 botonMasVendidos">Más vendidos</h3>
+          <h3 class="m-2 botonPromociones">Promociones</h3>
+          <h3 class="m-2 botonNuevos">Nuevos</h3>
+        </div>
+      </div>
+
+
+
+      <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <small id="emailHelp" class="form-text text-muted correo">We'll never share your email with anyone else.</small>
+        </div>
+       
+      
+
+
+
+
+ 
+
+    <!-- Links de javaScript de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <!-- Links de javascript -->
+    <script src="js/productos.js"></script>
+    <script src="js/javascript.js"></script>
+  </body>
+</html>
