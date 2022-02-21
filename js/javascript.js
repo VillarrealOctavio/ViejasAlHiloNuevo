@@ -115,7 +115,7 @@ function mostrarBolsos (array) {
 
         btnAgregarAlCarrito.addEventListener(`click`, ()=>{
             console.log(el.id)
-        agregarAlCarrito(el.id)
+        agregarAlCarritoBolsos(el.id)
         })
     });
 }
@@ -140,7 +140,7 @@ function mostrarEstuches (array) {
 
         btnAgregarAlCarrito.addEventListener(`click`, ()=>{
             console.log(el.id)
-            agregarAlCarrito(el.id)
+            agregarAlCarritoEstuches(el.id)
         })
     });
 }
@@ -160,11 +160,11 @@ function mostrarLatas (array) {
                 </div>
         `
         latasContainer.appendChild(div)
-        let btnAgregarAlCarrito = document.querySelector(`buyLata${el.id}`)
+        let btnAgregarAlCarrito = document.querySelector(`#buyLata${el.id}`)
         console.log(btnAgregarAlCarrito)
         btnAgregarAlCarrito.addEventListener(`click`, ()=>{
             console.log(el.id)
-            agregarAlCarrito(el.id);
+            agregarAlCarritoLatas(el.id);
         })
     });
 }
@@ -184,23 +184,23 @@ function mostrarMates (array) {
                 </div>
         `
         matesContainer.appendChild(div)
-        let btnAgregarAlCarrito = document.querySelector(`buyMate${el.id}`);
+        let btnAgregarAlCarrito = document.querySelector(`#buyMate${el.id}`);
         console.log(btnAgregarAlCarrito)
         btnAgregarAlCarrito.addEventListener(`click`, ()=>{
             console.log(el.id);
-            agregarAlCarrito(el.id);
+            agregarAlCarritoMates(el.id);
         })
     });
 }
 // Una vez terminada la parte de los productos, es necesario realizar una función que me relacione cada uno de ellos con el carrito
 
-// function agregarAlCarrito
-function agregarAlCarrito (id){
+// function agregarAlCarrito para Bolsos
+function agregarAlCarritoBolsos (id){
     let productoRepetido = enElCarrito.find(el=>el.id==id);
     if(productoRepetido){
         console.log("El producto está repetido en tu carrito")
-        productoRepetido.cantidad = productoRepetido.cantidad + 1
-        document.querySelector(`cantidad${productoRepetido.id}`).innerHTML= `<p id="cantidad${productoRepetido.id}">Cantidad: ${productoRepetido.cantidad}</p>`
+        productoRepetido.cantidad = productoRepetido.cantidad +=1
+        document.querySelector(`#cantidad${productoRepetido.id}`).innerHTML= `<p id="cantidad${productoRepetido.id}">Cantidad: ${productoRepetido.cantidad}</p>`
         actualizarCarritoDeCompras()
     }else{
     let agregarElProducto = stockBolsos.find(el=>el.id==id)
@@ -229,16 +229,137 @@ function agregarAlCarrito (id){
     localStorage.setItem(`carritoDeCompras`, JSON.stringify(enElCarrito));
 }
 
+
+
+
+// function agregarAlCarrito para bolsas y estuches
+function agregarAlCarritoEstuches (id){
+    let productoRepetido = enElCarrito.find(el=>el.id==id);
+    if(productoRepetido){
+        console.log("El producto está repetido en tu carrito")
+        productoRepetido.cantidad = productoRepetido.cantidad += 1
+        document.querySelector(`#cantidad${productoRepetido.id}`).innerHTML= `<p id="cantidad${productoRepetido.id}">Cantidad: ${productoRepetido.cantidad}</p>`
+        actualizarCarritoDeCompras()
+    }else{
+    let agregarElProducto = stockEstuches.find(el=>el.id==id)
+    console.log(agregarElProducto)
+    enElCarrito.push(agregarElProducto)
+    actualizarCarritoDeCompras();
+
+    let div = document.createElement("div")
+    div.className=`d-flex justify-content-around`
+    div.innerHTML=`
+            <p>${agregarElProducto.tipo}</p>
+            <p>Precio: $${agregarElProducto.precio}</p>
+            <p id="cantidad${agregarElProducto.id}">Cantidad: ${agregarElProducto.cantidad}</p>
+            <button id="eliminar${agregarElProducto.id}">Eliminar</button>
+    `
+    carritoModal.appendChild(div)
+    const btnEliminar = document.querySelector(`#eliminar${agregarElProducto.id}`)
+    btnEliminar.addEventListener(`click`, ()=>{
+        console.log(agregarElProducto.id)
+        btnEliminar.parentElement.remove();
+        enElCarrito = enElCarrito.filter(el=>el.id != agregarElProducto.id)
+    actualizarCarritoDeCompras();
+    localStorage.setItem(`carritoDeCompras`, JSON.stringify(enElCarrito));
+})    
+    }
+    localStorage.setItem(`carritoDeCompras`, JSON.stringify(enElCarrito));
+} 
+
+
+
+// function agregarAlCarrito para latas
+function agregarAlCarritoLatas (id){
+    let productoRepetido = enElCarrito.find(el=>el.id==id);
+    if(productoRepetido){
+        console.log("El producto está repetido en tu carrito")
+        productoRepetido.cantidad = productoRepetido.cantidad += 1
+        document.querySelector(`#cantidad${productoRepetido.id}`).innerHTML= `<p id="cantidad${productoRepetido.id}">Cantidad: ${productoRepetido.cantidad}</p>`
+        actualizarCarritoDeCompras()
+    }else{
+    let agregarElProducto = stockLatas.find(el=>el.id==id)
+    console.log(agregarElProducto)
+    enElCarrito.push(agregarElProducto)
+    actualizarCarritoDeCompras();
+
+    let div = document.createElement("div")
+    div.className=`d-flex justify-content-around`
+    div.innerHTML=`
+            <p>${agregarElProducto.tipo}</p>
+            <p>Precio: $${agregarElProducto.precio}</p>
+            <p id="cantidad${agregarElProducto.id}">Cantidad: ${agregarElProducto.cantidad}</p>
+            <button id="eliminar${agregarElProducto.id}">Eliminar</button>
+    `
+    carritoModal.appendChild(div)
+    const btnEliminar = document.querySelector(`#eliminar${agregarElProducto.id}`)
+    btnEliminar.addEventListener(`click`, ()=>{
+        console.log(agregarElProducto.id)
+        btnEliminar.parentElement.remove();
+        enElCarrito = enElCarrito.filter(el=>el.id != agregarElProducto.id)
+    actualizarCarritoDeCompras();
+    localStorage.setItem(`carritoDeCompras`, JSON.stringify(enElCarrito));
+})    
+    }
+    localStorage.setItem(`carritoDeCompras`, JSON.stringify(enElCarrito));
+}
+
+// function agregarAlCarrito para mates
+function agregarAlCarritoMates (id){
+    let productoRepetido = enElCarrito.find(el=>el.id==id);
+    if(productoRepetido){
+        console.log("El producto está repetido en tu carrito")
+        productoRepetido.cantidad = productoRepetido.cantidad += 1
+        document.querySelector(`#cantidad${productoRepetido.id}`).innerHTML= `<p id="cantidad${productoRepetido.id}">Cantidad: ${productoRepetido.cantidad}</p>`
+        actualizarCarritoDeCompras()
+    }else{
+    let agregarElProducto = stockMates.find(el=>el.id==id)
+    console.log(agregarElProducto)
+    enElCarrito.push(agregarElProducto)
+    actualizarCarritoDeCompras();
+
+    let div = document.createElement("div")
+    div.className=`d-flex justify-content-around`
+    div.innerHTML=`
+            <p>${agregarElProducto.tipo}</p>
+            <p>Precio: $${agregarElProducto.precio}</p>
+            <p id="cantidad${agregarElProducto.id}">Cantidad: ${agregarElProducto.cantidad}</p>
+            <button id="eliminar${agregarElProducto.id}">Eliminar</button>
+    `
+    carritoModal.appendChild(div)
+    const btnEliminar = document.querySelector(`#eliminar${agregarElProducto.id}`)
+    btnEliminar.addEventListener(`click`, ()=>{
+        console.log(agregarElProducto.id)
+        btnEliminar.parentElement.remove();
+        enElCarrito = enElCarrito.filter(el=>el.id != agregarElProducto.id)
+    actualizarCarritoDeCompras();
+    localStorage.setItem(`carritoDeCompras`, JSON.stringify(enElCarrito));
+})    
+    }
+    localStorage.setItem(`carritoDeCompras`, JSON.stringify(enElCarrito));
+}
+
+
+
+
+
+
+
 // Función para poder actualizar el carrito cuando sea necesario
 function actualizarCarritoDeCompras (){
     totalPrice.innerText=enElCarrito.reduce((acc,el)=>acc+(el.cantidad*el.precio), 0)
 }
 
+
+// Función para recuperar info guardada en el storage
 function recuperarData (){
-    let recuperarLs = JSON.parse(localStorage.getItem(`carritoDeCompras`))
-    if(recuperarLs){{
+    // let recuperarLs = JSON.parse(localStorage.getItem(`carritoDeCompras`))
+    enElCarrito = JSON.parse(localStorage.getItem('carritoDeCompras')) || []
+}
+    /* if(recuperarLs){
         recuperarLs.forEach(el=>{
             enElCarrito(el.id)
         })
-    }}
-}
+    }
+}*/
+recuperarData()
