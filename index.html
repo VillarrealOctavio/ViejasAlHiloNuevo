@@ -18,20 +18,19 @@
 
 
 
-  <body class="contenedorPadreBody container">
+  <body class="container">
 
-    <!-- Aquí se incluye el logo, el carrito de compras y la ubicación-->
-    <div class="headIndex row">
-      <div class="headLogo col-md-12 d-flex justify-content-between wdh100"> 
-        <div class="d-flex flex-column justify-content-center">        
+      <!-- INTRODUZCO LOGO DEL SITIO CON UBICACIÓN Y CARRITO DE COMPRAS -->
+      <div class="headLogo row">
+        <div class="col-md-5">        
           <img src="assets/img/iconos/ubicacion.gif" alt="ubicacion">
         </div>
-        <div>
+        <div class="col-md-2">
           <img src="assets/img/iconos/logoHorizontal.png" alt="Logo">
         </div>
-        <div class="d-flex flex-column justify-content-center"> 
+        <div class="col-md-5 d-flex justify-content-end"> 
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal">
               <img src="assets/img/iconos/carritoCompras.png" alt="carrito">
             </button>
             <!-- Modal -->
@@ -53,79 +52,84 @@
                   </div>
                 </div>
               </div>
-            </div>                 
-        </div>  
-      </div> 
-      <!-- Aquí comienza el nav -->
-      <div class="bgMostaza wdh100 col-md-12 my-1 bordeRedondo">
-        <ul class="nav d-flex justify-content-center">
-          <li class="nav-item">
-            <a id="botonTermos" class="nav-link fontMegrim" href="#"><strong>Termos</strong></a>
-          </li>
-          <li class="nav-item">
-            <a id="botonBolsos" class="nav-link fontMegrim" href="#"><strong>Bolsos</strong></a>
-          </li>
-          <li class="nav-item">
-            <a id="botonMates" class="nav-link fontMegrim" href="#"><strong>Mates</strong></a>
-          </li>
-        </ul>       
+            </div> 
       </div>
 
-      <div class="col-md-12">
-        <select id="filtrarMate">
-          <option value="todos">Todos</option>
-          <option value="azul">Azul</option>
-          <option value="blanco">Blanco</option>
-          <option value="caramelo">Caramelo</option>
-          <option value="carmin">Carmin</option>
-          <option value="celeste">Celeste</option>
-          <option value="fucsia">Fucsia</option>
-          <option value="lila">Lila</option>
-          <option value="rosa">Rosa</option>
-          <option value="terracota">Terracota</option>
-          <option value="turqueza">Turqueza</option>
-          <option value="verde">Verde</option>
-          <option value="violeta">Violeta</option>
-          <option value="marron">Marrón</option>
-          <option value="naranja">Naranja</option>
-          <option value="negro">Negro</option>
-          <option value="rojo">Rojo</option>
-        </select>
+      <!-- AQUI COMIENZA LA NAV -->
+
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="nav d-flex bgMostaza">
+            <li class="nav-item">
+              <a class="nav-link fontMegrim" href="#">INICIO</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fontMegrim" href="#">NOSOTRAS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fontMegrim" href="#">CONTACTO</a>
+            </li>
+          </ul>
+        </div>
       </div>
 
-      <div class="todosMates col-md-12 d-flex flex-wrap justify-content-between">
 
-      </div>
-      <div class="todosBolsos col-md-12">
 
-      </div>
-      <div class="todosTermos col-md-12">
-
-      </div>
-    </div>
-      <!-- AHORA COMIENZA EL MAIN DE MI INDEX -->
-      <div class="mainIndex row my-1">
-        <div class="andinista col-md-12">
+      <!-- AHORA COMIENZA EL MAIN DEL INDEX-->
+      <div class="pageNav row my-1">
+        <div class="andinista col-md-12 d-flex justify-content-center">
           <img src="assets/img/andinista.jpg" class="bordeRedondo" alt="Img">
         </div>
-        <div class="col-md-12 d-flex justify-content-center">
-          <h3 class="m-2 botonMasVendidos">Más vendidos</h3>
-          <h3 class="m-2 botonPromociones">Promociones</h3>
-          <h3 class="m-2 botonNuevos">Nuevos</h3>
-        </div>
+
+        <div class="col-md-12 d-flex flex-row justify-content-around  bgVerde m-2 bordeRedondo">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle fontMegrim botonMates" data-toggle="dropdown" href="#" role="button" aria-expanded="false">|Mates|</a>
+            <select name="" id="filtrarMates">
+              <option value="all">Todos los modelos</option>
+              <option value="vidrio">Mates de vidrio</option>
+              <option value="plastico">Mates de plástico</option>
+            </select>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle fontMegrim botonEstuches" data-toggle="dropdown" href="#" role="button" aria-expanded="false">|Estuches|</a>
+            <select name="" id="filtrarEstuches">
+              <option value="all">Todos los modelos</option>
+              <option value="bolsa">Bolsas</option>
+              <option value="estuche">Estuches</option>
+            </select>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle fontMegrim botonLatas" data-toggle="dropdown" href="#" role="button" aria-expanded="false">|Latas|</a>
+            <select name="" id="filtrarLatas">
+              <option value="all">Todos los modelos</option>
+              <option value="sintetico">Sintéticos</option>
+              <option value="vegetal">Vegetales</option>
+            </select>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle fontMegrim botonBolsos" data-toggle="dropdown" href="#" role="button" aria-expanded="false">|Bolsos|</a>
+            <select name="" id="filtrarBolsos">
+              <option value="all"> Todos los modelos</option>
+              <option value="estampado">Estampados</option>
+              <option value="liso">Lisos</option>
+              <option value="rayas">A rayas</option>
+              <option value="camuflado">Camuflados</option>
+              <option value="personalizado">Personalizados</option>
+            </select>
+          </li>          
       </div>
 
+      <div class="contenedorMates row"></div>
+      <div class="contenedorEstuches row"></div>
+      <div class="contenedorLatas row"></div>
+      <div class="contenedorBolsos row"></div>
 
 
-      <form>
-        <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-          <small id="emailHelp" class="form-text text-muted correo">We'll never share your email with anyone else.</small>
-        </div>
-       
-      
 
+   
 
 
 
