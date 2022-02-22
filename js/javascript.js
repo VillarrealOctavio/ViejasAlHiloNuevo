@@ -37,11 +37,11 @@ btnBolsos.addEventListener(`click`, ()=>{
     mostrarBolsos(stockBolsos)
 })
 filtradoBolsos.addEventListener(`change`, ()=>{
-    if(filtradoBolsos.value=="all"){
-        mostrarBolsos(stockBolsos)
-    }else{
-        mostrarBolsos(stockBolsos.filter(el=>el.clase==filtradoBolsos.value))
-    }
+    (filtradoBolsos.value=="all")?
+    mostrarBolsos(stockBolsos)
+    :
+    mostrarBolsos(stockBolsos.filter(el=>el.clase==filtradoBolsos.value))
+    
 })
 // Para estuches
 btnEstuches.addEventListener(`click`,()=>{
@@ -51,11 +51,11 @@ btnEstuches.addEventListener(`click`,()=>{
     mostrarEstuches(stockEstuches)
 })
 filtradoEstuches.addEventListener(`change`, ()=>{
-    if(filtradoEstuches.value=="all"){
-        mostrarEstuches(stockEstuches)
-    }else{
-        mostrarEstuches(stockEstuches.filter(el=>el.clase==filtradoEstuches.value))
-    }
+    (filtradoEstuches.value=="all")?
+    mostrarEstuches(stockEstuches)
+    :
+     mostrarEstuches(stockEstuches.filter(el=>el.clase==filtradoEstuches.value))
+    
 })
 // Para latas
 btnLatas.addEventListener("click", ()=>{
@@ -65,11 +65,11 @@ btnLatas.addEventListener("click", ()=>{
     mostrarLatas(stockLatas)
 })
 filtradoLatas.addEventListener(`change`, ()=>{
-    if(filtradoLatas.value=="all"){
-        mostrarLatas(stockLatas)
-    }else{
-        mostrarLatas(stockLatas.filter(el=>el.clase==filtradoLatas.value))
-    }
+    (filtradoLatas.value=="all")?
+    mostrarLatas(stockLatas)
+    :
+    mostrarLatas(stockLatas.filter(el=>el.clase==filtradoLatas.value))
+    
 })
 // Para mates
 btnMates.addEventListener(`click`, ()=>{
@@ -79,11 +79,11 @@ btnMates.addEventListener(`click`, ()=>{
     mostrarMates(stockMates)
 })
 filtradoMates.addEventListener(`change`, ()=>{
-    if(filtradoMates.value=="all"){
-        mostrarMates(stockMates);
-    }else{
-        mostrarMates(stockMates.filter(el=>el.clase==filtradoMates.value))
-    }
+    filtradoMates.value=="all"?
+    mostrarMates(stockMates)
+    :
+    mostrarMates(stockMates.filter(el=>el.clase==filtradoMates.value))
+    
 })
 
 
@@ -97,14 +97,15 @@ filtradoMates.addEventListener(`change`, ()=>{
 function mostrarBolsos (array) {
     bolsosContainer.innerHTML=""
     array.forEach(el => {
+        const {img, id, tipo}= el
         const div = document.createElement("div")
         div.innerHTML+=`
                 <div class="card" style="width: 18rem;">
-                    <img src="${el.img}" class="card-img-top" alt="imagen">
+                    <img src="${img}" class="card-img-top" alt="imagen">
                     <div class="card-body">
-                    <h5 class="card-title">${el.tipo}</h5>
+                    <h5 class="card-title">${tipo}</h5>
                     <p class="card-text">Viejas al Hilo</p>
-                    <a href="#" class="btn btn-primary" id="buyBolso${el.id}">Agregar al carrito de compras</a>
+                    <a href="#" class="btn btn-primary" id="buyBolso${id}">Agregar al carrito de compras</a>
                     </div>
                 </div>
         `
@@ -123,14 +124,15 @@ function mostrarBolsos (array) {
 function mostrarEstuches (array) {
     estuchesContainer.innerHTML=""
     array.forEach(el => {
+        const {img, tipo, id}=el;
         const div = document.createElement("div")
         div.innerHTML+=`
                 <div class="card" style="width: 18rem;">
-                    <img src="${el.img}" class="card-img-top" alt="imagen">
+                    <img src="${img}" class="card-img-top" alt="imagen">
                     <div class="card-body">
-                    <h5 class="card-title">${el.tipo}</h5>
+                    <h5 class="card-title">${tipo}</h5>
                     <p class="card-text">Viejas al Hilo</p>
-                    <a href="#" class="btn btn-primary" id="buyEstuche${el.id}">Agregar al carrito de compras</a>
+                    <a href="#" class="btn btn-primary" id="buyEstuche${id}">Agregar al carrito de compras</a>
                     </div>
                 </div>
         `
@@ -148,14 +150,15 @@ function mostrarEstuches (array) {
 function mostrarLatas (array) {
     latasContainer.innerHTML=""
     array.forEach(el => {
+        const {id, img, tipo} = el;
         const div = document.createElement("div")
         div.innerHTML+=`
                 <div class="card" style="width: 18rem;">
-                    <img src="${el.img}" class="card-img-top" alt="imagen">
+                    <img src="${img}" class="card-img-top" alt="imagen">
                     <div class="card-body">
-                    <h5 class="card-title">${el.tipo}</h5>
+                    <h5 class="card-title">${tipo}</h5>
                     <p class="card-text">Viejas al Hilo</p>
-                    <a href="#" class="btn btn-primary" id="buyLata${el.id}">Agregar al carrito de compras</a>
+                    <a href="#" class="btn btn-primary" id="buyLata${id}">Agregar al carrito de compras</a>
                     </div>
                 </div>
         `
@@ -172,14 +175,15 @@ function mostrarLatas (array) {
 function mostrarMates (array) {
     matesContainer.innerHTML=""
     array.forEach(el => {
+        const {id, tipo, img} = el;
         const div = document.createElement("div")
         div.innerHTML+=`
                 <div class="card" style="width: 18rem;">
-                    <img src="${el.img}" class="card-img-top" alt="imagen">
+                    <img src="${img}" class="card-img-top" alt="imagen">
                     <div class="card-body">
-                    <h5 class="card-title">${el.tipo}</h5>
+                    <h5 class="card-title">${tipo}</h5>
                     <p class="card-text">Viejas al Hilo</p>
-                    <a href="#" class="btn btn-primary" id="buyMate${el.id}">Agregar al carrito de compras</a>
+                    <a href="#" class="btn btn-primary" id="buyMate${id}">Agregar al carrito de compras</a>
                     </div>
                 </div>
         `
