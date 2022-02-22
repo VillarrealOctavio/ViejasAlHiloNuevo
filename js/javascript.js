@@ -116,7 +116,13 @@ function mostrarBolsos (array) {
 
         btnAgregarAlCarrito.addEventListener(`click`, ()=>{
             console.log(el.id)
-        agregarAlCarritoBolsos(el.id)
+            Swal.fire({
+                icon: 'success',
+                title: 'Genial',
+                text: 'Tu compra fue agregada al carrito!',
+                footer: '<a href="">Seguir</a>'
+              })
+            agregarAlCarritoBolsos(el.id)
         })
     });
 }
@@ -137,11 +143,17 @@ function mostrarEstuches (array) {
                 </div>
         `
         estuchesContainer.appendChild(div)
-        let btnAgregarAlCarrito = document.querySelector(`#buyEstuche${el.id}`)
+        let btnAgregarAlCarrito = document.querySelector(`#buyEstuche${id}`)
         console.log(btnAgregarAlCarrito)
 
         btnAgregarAlCarrito.addEventListener(`click`, ()=>{
             console.log(el.id)
+            Swal.fire({
+                icon: 'success',
+                title: 'Genial',
+                text: 'Tu compra fue agregada al carrito!',
+                footer: '<a href="">Seguir</a>'
+              })
             agregarAlCarritoEstuches(el.id)
         })
     });
@@ -163,11 +175,17 @@ function mostrarLatas (array) {
                 </div>
         `
         latasContainer.appendChild(div)
-        let btnAgregarAlCarrito = document.querySelector(`#buyLata${el.id}`)
+        let btnAgregarAlCarrito = document.querySelector(`#buyLata${id}`)
         console.log(btnAgregarAlCarrito)
         btnAgregarAlCarrito.addEventListener(`click`, ()=>{
-            console.log(el.id)
-            agregarAlCarritoLatas(el.id);
+            console.log(id)
+            Swal.fire({
+                icon: 'success',
+                title: 'Genial',
+                text: 'Tu compra fue agregada al carrito!',
+                footer: '<a href="">Seguir</a>'
+              })
+            agregarAlCarritoLatas(id);
         })
     });
 }
@@ -188,11 +206,17 @@ function mostrarMates (array) {
                 </div>
         `
         matesContainer.appendChild(div)
-        let btnAgregarAlCarrito = document.querySelector(`#buyMate${el.id}`);
+        let btnAgregarAlCarrito = document.querySelector(`#buyMate${id}`);
         console.log(btnAgregarAlCarrito)
         btnAgregarAlCarrito.addEventListener(`click`, ()=>{
-            console.log(el.id);
-            agregarAlCarritoMates(el.id);
+            console.log(id);
+            Swal.fire({
+                icon: 'success',
+                title: 'Genial',
+                text: 'Tu compra fue agregada al carrito!',
+                footer: '<a href="">Seguir</a>'
+              })
+            agregarAlCarritoMates(id);
         })
     });
 }
@@ -224,6 +248,23 @@ function agregarAlCarritoBolsos (id){
     const btnEliminar = document.querySelector(`#eliminar${agregarElProducto.id}`)
     btnEliminar.addEventListener(`click`, ()=>{
         console.log(agregarElProducto.id)
+        Swal.fire({
+            title: '¿Está seguro?',
+            text: "Usted va a eliminar un producto del carrito!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, sácalo!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire(
+                'Deleted!',
+                'Your file has been deleted.',
+                'success'
+              )
+            }
+          })
         btnEliminar.parentElement.remove();
         enElCarrito = enElCarrito.filter(el=>el.id != agregarElProducto.id)
     actualizarCarritoDeCompras();
@@ -357,13 +398,6 @@ function actualizarCarritoDeCompras (){
 
 // Función para recuperar info guardada en el storage
 function recuperarData (){
-    // let recuperarLs = JSON.parse(localStorage.getItem(`carritoDeCompras`))
     enElCarrito = JSON.parse(localStorage.getItem('carritoDeCompras')) || []
 }
-    /* if(recuperarLs){
-        recuperarLs.forEach(el=>{
-            enElCarrito(el.id)
-        })
-    }
-}*/
-recuperarData()
+
