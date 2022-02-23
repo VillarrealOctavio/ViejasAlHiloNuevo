@@ -61,17 +61,17 @@
 
       <!-- AQUI COMIENZA LA NAV -->
 
-      <div class="row">
-        <div class="col-md-12">
-          <ul class="nav d-flex bgMostaza">
+      <div class="row bgMostaza">
+        <div class="col-md-12 bgMostaza">
+          <ul class="nav d-flex">
             <li class="nav-item">
-              <a class="nav-link fontMegrim" href="#">INICIO</a>
+              <a class="nav-link fontMegrimNav" href="#">INICIO</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fontMegrim" href="#">NOSOTRAS</a>
+              <a class="nav-link fontMegrimNav" href="#">NOSOTRAS</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fontMegrim" href="#">CONTACTO</a>
+              <a class="nav-link fontMegrimNav" href="#">CONTACTO</a>
             </li>
           </ul>
         </div>
@@ -87,8 +87,8 @@
 
         <div class="col-md-12 d-flex flex-row justify-content-around  bgVerde m-2 bordeRedondo">
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle fontMegrim botonMates" data-toggle="dropdown" href="#" role="button" aria-expanded="false">|Mates|</a>
-            <select name="" id="filtrarMates">
+            <a class="nav-link fontMegrim botonMates" id="Mates">|Mates|</a>
+            <select name="" id="filtrarMates" class="filtros">
               <option value="all">Todos los modelos</option>
               <option value="vidrio">Mates de vidrio</option>
               <option value="plastico">Mates de plástico</option>
@@ -96,8 +96,8 @@
           </li>
 
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle fontMegrim botonEstuches" data-toggle="dropdown" href="#" role="button" aria-expanded="false">|Estuches|</a>
-            <select name="" id="filtrarEstuches">
+            <a class="nav-link fontMegrim botonEstuches" id="Estuches">|Estuches|</a>
+            <select name="" id="filtrarEstuches" class="filtros">
               <option value="all">Todos los modelos</option>
               <option value="bolsa">Bolsas</option>
               <option value="estuche">Estuches</option>
@@ -105,8 +105,8 @@
           </li>
 
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle fontMegrim botonLatas" data-toggle="dropdown" href="#" role="button" aria-expanded="false">|Latas|</a>
-            <select name="" id="filtrarLatas">
+            <a class="nav-link fontMegrim botonLatas" id="Latas">|Latas|</a>
+            <select name="" id="filtrarLatas" class="filtros">
               <option value="all">Todos los modelos</option>
               <option value="sintetico">Sintéticos</option>
               <option value="vegetal">Vegetales</option>
@@ -114,8 +114,8 @@
           </li>
 
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle fontMegrim botonBolsos" data-toggle="dropdown" href="#" role="button" aria-expanded="false">|Bolsos|</a>
-            <select name="" id="filtrarBolsos">
+            <a class="nav-link fontMegrim botonBolsos" id="Bolsos">|Bolsos|</a>
+            <select name="" id="filtrarBolsos" class="filtros">
               <option value="all"> Todos los modelos</option>
               <option value="estampado">Estampados</option>
               <option value="liso">Lisos</option>
@@ -126,10 +126,8 @@
           </li>          
       </div>
 
-      <div class="contenedorMates row"></div>
-      <div class="contenedorEstuches row"></div>
-      <div class="contenedorLatas row"></div>
-      <div class="contenedorBolsos row"></div>
+      <div class="contenedor row" id="contenedorProductos"></div>
+      
 
 
 

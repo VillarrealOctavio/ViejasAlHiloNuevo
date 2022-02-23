@@ -1,105 +1,89 @@
 // arrays
 let enElCarrito = [];
 
-
 // CONTENEDORES
-const matesContainer = document.querySelector(".contenedorMates")
-const estuchesContainer = document.querySelector(".contenedorEstuches")
-const latasContainer = document.querySelector(".contenedorLatas")
-const bolsosContainer = document.querySelector(".contenedorBolsos")
-const carritoModal = document.querySelector(".modalCarrito")
-const totalPrice = document.querySelector("#precioTotal")
-
-
-
-
+const conenedorProductos = document.getElementById("contenedorProductos");
+const carritoModal = document.querySelector(".modalCarrito");
+const totalPrice = document.querySelector("#precioTotal");
 
 // CONTENEDORES PARA EVENTOS
-const btnMates = document.querySelector(".botonMates")
-const btnEstuches = document.querySelector(".botonEstuches")
-const btnLatas = document.querySelector(".botonLatas")
-const btnBolsos = document.querySelector(".botonBolsos")
-const filtradoBolsos = document.querySelector("#filtrarBolsos")
-const filtradoEstuches = document.querySelector("#filtrarEstuches")
-const filtradoLatas = document.querySelector("#filtrarLatas")
-const filtradoMates = document.querySelector("#filtrarMates")
+const btn = document.getElementsByClassName("fontMegrim");
+const filtradoBolsos = document.querySelector("#filtrarBolsos");
+const filtradoEstuches = document.querySelector("#filtrarEstuches");
+const filtradoLatas = document.querySelector("#filtrarLatas");
+const filtradoMates = document.querySelector("#filtrarMates");
 
+for (const boton of btn) {
+  boton.addEventListener("click", () => {
+    switch (boton.id) {
+      case "Mates":
+        mostrarProductos(stockMates);
+        break;
+      case "Bolsos":
+        mostrarProductos(stockBolsos);
+        break;
+      case "Estuches":
+        mostrarProductos(stockEstuches);
+        break;
+      case "Latas":
+        mostrarProductos(stockLatas);
+        break;
 
-
-
+      default:
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Something went wrong!',
+          footer: '<a href="">Why do I have this issue?</a>'
+        })
+        break;
+    }
+  });
+}
 
 // EVENTOS
 // Para bolsos
-btnBolsos.addEventListener(`click`, ()=>{
-    matesContainer.innerHTML=""
-    estuchesContainer.innerHTML=""
-    latasContainer.innerHTML=""
-    mostrarBolsos(stockBolsos)
-})
-filtradoBolsos.addEventListener(`change`, ()=>{
-    (filtradoBolsos.value=="all")?
-    mostrarBolsos(stockBolsos)
-    :
-    mostrarBolsos(stockBolsos.filter(el=>el.clase==filtradoBolsos.value))
-    
-})
-// Para estuches
-btnEstuches.addEventListener(`click`,()=>{
-    matesContainer.innerHTML=""
-    bolsosContainer.innerHTML=""
-    latasContainer.innerHTML=""
-    mostrarEstuches(stockEstuches)
-})
-filtradoEstuches.addEventListener(`change`, ()=>{
-    (filtradoEstuches.value=="all")?
-    mostrarEstuches(stockEstuches)
-    :
-     mostrarEstuches(stockEstuches.filter(el=>el.clase==filtradoEstuches.value))
-    
-})
-// Para latas
-btnLatas.addEventListener("click", ()=>{
-    matesContainer.innerHTML=""
-    bolsosContainer.innerHTML=""
-    estuchesContainer.innerHTML=""
-    mostrarLatas(stockLatas)
-})
-filtradoLatas.addEventListener(`change`, ()=>{
-    (filtradoLatas.value=="all")?
-    mostrarLatas(stockLatas)
-    :
-    mostrarLatas(stockLatas.filter(el=>el.clase==filtradoLatas.value))
-    
-})
-// Para mates
-btnMates.addEventListener(`click`, ()=>{
-    latasContainer.innerHTML=""
-    bolsosContainer.innerHTML=""
-    estuchesContainer.innerHTML=""
-    mostrarMates(stockMates)
-})
-filtradoMates.addEventListener(`change`, ()=>{
-    filtradoMates.value=="all"?
-    mostrarMates(stockMates)
-    :
-    mostrarMates(stockMates.filter(el=>el.clase==filtradoMates.value))
-    
-})
-
-
-
-
-
-
+filtradoBolsos.addEventListener(`change`, () => {
+  filtradoBolsos.value == "all"
+    ? mostrarProductos(stockBolsos)
+    : mostrarProductos(
+        stockBolsos.filter((el) => el.clase == filtradoBolsos.value)
+      );
+});
+// // Para estuches
+filtradoEstuches.addEventListener(`change`, () => {
+  filtradoEstuches.value == "all"
+    ? mostrarProductos(stockEstuches)
+    : mostrarProductos(
+        stockEstuches.filter((el) => el.clase == filtradoEstuches.value)
+      );
+});
+// // Para latas
+filtradoLatas.addEventListener(`change`, () => {
+  filtradoLatas.value == "all"
+    ? mostrarProductos(stockLatas)
+    : mostrarProductos(
+        stockLatas.filter((el) => el.clase == filtradoLatas.value)
+      );
+});
+// // Para mates
+filtradoMates.addEventListener(`change`, () => {
+  filtradoMates.value == "all"
+    ? mostrarProductos(stockMates)
+    : mostrarProductos(
+        stockMates.filter((el) => el.clase == filtradoMates.value)
+      );
+});
 
 // FUNCIONES
 // Para bolsos
-function mostrarBolsos (array) {
-    bolsosContainer.innerHTML=""
-    array.forEach(el => {
-        const {img, id, tipo}= el
-        const div = document.createElement("div")
-        div.innerHTML+=`
+function mostrarProductos(array) {
+  console.log(array);
+  conenedorProductos.innerHTML = "";
+  array.forEach((el) => {
+    const { img, id, tipo } = el;
+    const div = document.createElement("div");
+    div.innerHTML += `
                 <div class="card" style="width: 18rem;">
                     <img src="${img}" class="card-img-top" alt="imagen">
                     <div class="card-body">
@@ -108,296 +92,112 @@ function mostrarBolsos (array) {
                     <a href="#" class="btn btn-primary" id="buyBolso${id}">Agregar al carrito de compras</a>
                     </div>
                 </div>
-        `
-        bolsosContainer.appendChild(div)
+        `;
+    conenedorProductos.appendChild(div);
 
-        let btnAgregarAlCarrito = document.querySelector(`#buyBolso${el.id}`)
-        console.log(btnAgregarAlCarrito)
+    let btnAgregarAlCarrito = document.querySelector(`#buyBolso${el.id}`);
+    console.log(btnAgregarAlCarrito);
 
-        btnAgregarAlCarrito.addEventListener(`click`, ()=>{
-            console.log(el.id)
-            Swal.fire({
-                icon: 'success',
-                title: 'Genial',
-                text: 'Tu compra fue agregada al carrito!',
-                footer: '<a href="">Seguir</a>'
-              })
-            agregarAlCarritoBolsos(el.id)
-        })
+    btnAgregarAlCarrito.addEventListener(`click`, () => {
+      console.log(el.id);
+      Swal.fire({
+        icon: "success",
+        title: "Genial",
+        text: "Tu compra fue agregada al carrito!",
+        footer: '<a href="">Seguir</a>',
+      });
+      agregarAlCarrito(el.id);
     });
-}
-// Para estuches y bolsas
-function mostrarEstuches (array) {
-    estuchesContainer.innerHTML=""
-    array.forEach(el => {
-        const {img, tipo, id}=el;
-        const div = document.createElement("div")
-        div.innerHTML+=`
-                <div class="card" style="width: 18rem;">
-                    <img src="${img}" class="card-img-top" alt="imagen">
-                    <div class="card-body">
-                    <h5 class="card-title">${tipo}</h5>
-                    <p class="card-text">Viejas al Hilo</p>
-                    <a href="#" class="btn btn-primary" id="buyEstuche${id}">Agregar al carrito de compras</a>
-                    </div>
-                </div>
-        `
-        estuchesContainer.appendChild(div)
-        let btnAgregarAlCarrito = document.querySelector(`#buyEstuche${id}`)
-        console.log(btnAgregarAlCarrito)
-
-        btnAgregarAlCarrito.addEventListener(`click`, ()=>{
-            console.log(el.id)
-            Swal.fire({
-                icon: 'success',
-                title: 'Genial',
-                text: 'Tu compra fue agregada al carrito!',
-                footer: '<a href="">Seguir</a>'
-              })
-            agregarAlCarritoEstuches(el.id)
-        })
-    });
-}
-// Para latas 
-function mostrarLatas (array) {
-    latasContainer.innerHTML=""
-    array.forEach(el => {
-        const {id, img, tipo} = el;
-        const div = document.createElement("div")
-        div.innerHTML+=`
-                <div class="card" style="width: 18rem;">
-                    <img src="${img}" class="card-img-top" alt="imagen">
-                    <div class="card-body">
-                    <h5 class="card-title">${tipo}</h5>
-                    <p class="card-text">Viejas al Hilo</p>
-                    <a href="#" class="btn btn-primary" id="buyLata${id}">Agregar al carrito de compras</a>
-                    </div>
-                </div>
-        `
-        latasContainer.appendChild(div)
-        let btnAgregarAlCarrito = document.querySelector(`#buyLata${id}`)
-        console.log(btnAgregarAlCarrito)
-        btnAgregarAlCarrito.addEventListener(`click`, ()=>{
-            console.log(id)
-            Swal.fire({
-                icon: 'success',
-                title: 'Genial',
-                text: 'Tu compra fue agregada al carrito!',
-                footer: '<a href="">Seguir</a>'
-              })
-            agregarAlCarritoLatas(id);
-        })
-    });
-}
-// Para mates
-function mostrarMates (array) {
-    matesContainer.innerHTML=""
-    array.forEach(el => {
-        const {id, tipo, img} = el;
-        const div = document.createElement("div")
-        div.innerHTML+=`
-                <div class="card" style="width: 18rem;">
-                    <img src="${img}" class="card-img-top" alt="imagen">
-                    <div class="card-body">
-                    <h5 class="card-title">${tipo}</h5>
-                    <p class="card-text">Viejas al Hilo</p>
-                    <a href="#" class="btn btn-primary" id="buyMate${id}">Agregar al carrito de compras</a>
-                    </div>
-                </div>
-        `
-        matesContainer.appendChild(div)
-        let btnAgregarAlCarrito = document.querySelector(`#buyMate${id}`);
-        console.log(btnAgregarAlCarrito)
-        btnAgregarAlCarrito.addEventListener(`click`, ()=>{
-            console.log(id);
-            Swal.fire({
-                icon: 'success',
-                title: 'Genial',
-                text: 'Tu compra fue agregada al carrito!',
-                footer: '<a href="">Seguir</a>'
-              })
-            agregarAlCarritoMates(id);
-        })
-    });
+  });
 }
 // Una vez terminada la parte de los productos, es necesario realizar una función que me relacione cada uno de ellos con el carrito
 
-// function agregarAlCarrito para Bolsos
-function agregarAlCarritoBolsos (id){
-    let productoRepetido = enElCarrito.find(el=>el.id==id);
-    if(productoRepetido){
-        console.log("El producto está repetido en tu carrito")
-        productoRepetido.cantidad = productoRepetido.cantidad +=1
-        document.querySelector(`#cantidad${productoRepetido.id}`).innerHTML= `<p id="cantidad${productoRepetido.id}">Cantidad: ${productoRepetido.cantidad}</p>`
-        actualizarCarritoDeCompras()
-    }else{
-    let agregarElProducto = stockBolsos.find(el=>el.id==id)
-    console.log(agregarElProducto)
-    enElCarrito.push(agregarElProducto)
+// function agregarAlCarrito 
+function agregarAlCarrito(cod) {
+  let productoRepetido = enElCarrito.find((el) => el.id == cod);
+  if (productoRepetido) {
+    console.log("El producto está repetido en tu carrito");
+    productoRepetido.cantidad = productoRepetido.cantidad += 1;
+    document.querySelector(
+      `#cantidad${productoRepetido.id}`
+    ).innerHTML = `<p id="cantidad${productoRepetido.id}">Cantidad: ${productoRepetido.cantidad}</p>`;
     actualizarCarritoDeCompras();
-
-    let div = document.createElement("div")
-    div.className=`d-flex justify-content-around`
-    div.innerHTML=`
-            <p>${agregarElProducto.tipo}</p>
-            <p>Precio: $${agregarElProducto.precio}</p>
-            <p id="cantidad${agregarElProducto.id}">Cantidad: ${agregarElProducto.cantidad}</p>
-            <button id="eliminar${agregarElProducto.id}">Eliminar</button>
-    `
-    carritoModal.appendChild(div)
-    const btnEliminar = document.querySelector(`#eliminar${agregarElProducto.id}`)
-    btnEliminar.addEventListener(`click`, ()=>{
-        console.log(agregarElProducto.id)
-        Swal.fire({
-            title: '¿Está seguro?',
-            text: "Usted va a eliminar un producto del carrito!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Si, sácalo!'
-          }).then((result) => {
-            if (result.isConfirmed) {
-              Swal.fire(
-                'Deleted!',
-                'Your file has been deleted.',
-                'success'
-              )
-            }
-          })
-        btnEliminar.parentElement.remove();
-        enElCarrito = enElCarrito.filter(el=>el.id != agregarElProducto.id)
+  } else {
+    let agregarProducto = verificarArray(cod);
+    enElCarrito = [...enElCarrito, agregarProducto];
     actualizarCarritoDeCompras();
+    mostrarElCarrito(agregarProducto);
     localStorage.setItem(`carritoDeCompras`, JSON.stringify(enElCarrito));
-})    
-    }
-    localStorage.setItem(`carritoDeCompras`, JSON.stringify(enElCarrito));
+  }
 }
 
+function verificarArray(id) {
+  let agregarElProducto;
 
+  if (stockBolsos.find((el) => el.id == id)) {
+    agregarElProducto = stockBolsos.find((el) => el.id == id);
+  } else if (stockEstuches.find((el) => el.id == id)) {
+    agregarElProducto = stockEstuches.find((el) => el.id == id);
+  } else if (stockLatas.find((el) => el.id == id)) {
+    agregarElProducto = stockLatas.find((el) => el.id == id);
+  } else {
+    agregarElProducto = stockMates.find((el) => el.id == id);
+  }
 
-
-// function agregarAlCarrito para bolsas y estuches
-function agregarAlCarritoEstuches (id){
-    let productoRepetido = enElCarrito.find(el=>el.id==id);
-    if(productoRepetido){
-        console.log("El producto está repetido en tu carrito")
-        productoRepetido.cantidad = productoRepetido.cantidad += 1
-        document.querySelector(`#cantidad${productoRepetido.id}`).innerHTML= `<p id="cantidad${productoRepetido.id}">Cantidad: ${productoRepetido.cantidad}</p>`
-        actualizarCarritoDeCompras()
-    }else{
-    let agregarElProducto = stockEstuches.find(el=>el.id==id)
-    console.log(agregarElProducto)
-    enElCarrito.push(agregarElProducto)
-    actualizarCarritoDeCompras();
-
-    let div = document.createElement("div")
-    div.className=`d-flex justify-content-around`
-    div.innerHTML=`
-            <p>${agregarElProducto.tipo}</p>
-            <p>Precio: $${agregarElProducto.precio}</p>
-            <p id="cantidad${agregarElProducto.id}">Cantidad: ${agregarElProducto.cantidad}</p>
-            <button id="eliminar${agregarElProducto.id}">Eliminar</button>
-    `
-    carritoModal.appendChild(div)
-    const btnEliminar = document.querySelector(`#eliminar${agregarElProducto.id}`)
-    btnEliminar.addEventListener(`click`, ()=>{
-        console.log(agregarElProducto.id)
-        btnEliminar.parentElement.remove();
-        enElCarrito = enElCarrito.filter(el=>el.id != agregarElProducto.id)
-    actualizarCarritoDeCompras();
-    localStorage.setItem(`carritoDeCompras`, JSON.stringify(enElCarrito));
-})    
-    }
-    localStorage.setItem(`carritoDeCompras`, JSON.stringify(enElCarrito));
-} 
-
-
-
-// function agregarAlCarrito para latas
-function agregarAlCarritoLatas (id){
-    let productoRepetido = enElCarrito.find(el=>el.id==id);
-    if(productoRepetido){
-        console.log("El producto está repetido en tu carrito")
-        productoRepetido.cantidad = productoRepetido.cantidad += 1
-        document.querySelector(`#cantidad${productoRepetido.id}`).innerHTML= `<p id="cantidad${productoRepetido.id}">Cantidad: ${productoRepetido.cantidad}</p>`
-        actualizarCarritoDeCompras()
-    }else{
-    let agregarElProducto = stockLatas.find(el=>el.id==id)
-    console.log(agregarElProducto)
-    enElCarrito.push(agregarElProducto)
-    actualizarCarritoDeCompras();
-
-    let div = document.createElement("div")
-    div.className=`d-flex justify-content-around`
-    div.innerHTML=`
-            <p>${agregarElProducto.tipo}</p>
-            <p>Precio: $${agregarElProducto.precio}</p>
-            <p id="cantidad${agregarElProducto.id}">Cantidad: ${agregarElProducto.cantidad}</p>
-            <button id="eliminar${agregarElProducto.id}">Eliminar</button>
-    `
-    carritoModal.appendChild(div)
-    const btnEliminar = document.querySelector(`#eliminar${agregarElProducto.id}`)
-    btnEliminar.addEventListener(`click`, ()=>{
-        console.log(agregarElProducto.id)
-        btnEliminar.parentElement.remove();
-        enElCarrito = enElCarrito.filter(el=>el.id != agregarElProducto.id)
-    actualizarCarritoDeCompras();
-    localStorage.setItem(`carritoDeCompras`, JSON.stringify(enElCarrito));
-})    
-    }
-    localStorage.setItem(`carritoDeCompras`, JSON.stringify(enElCarrito));
+  return agregarElProducto;
 }
 
-// function agregarAlCarrito para mates
-function agregarAlCarritoMates (id){
-    let productoRepetido = enElCarrito.find(el=>el.id==id);
-    if(productoRepetido){
-        console.log("El producto está repetido en tu carrito")
-        productoRepetido.cantidad = productoRepetido.cantidad += 1
-        document.querySelector(`#cantidad${productoRepetido.id}`).innerHTML= `<p id="cantidad${productoRepetido.id}">Cantidad: ${productoRepetido.cantidad}</p>`
-        actualizarCarritoDeCompras()
-    }else{
-    let agregarElProducto = stockMates.find(el=>el.id==id)
-    console.log(agregarElProducto)
-    enElCarrito.push(agregarElProducto)
-    actualizarCarritoDeCompras();
-
-    let div = document.createElement("div")
-    div.className=`d-flex justify-content-around`
-    div.innerHTML=`
-            <p>${agregarElProducto.tipo}</p>
-            <p>Precio: $${agregarElProducto.precio}</p>
-            <p id="cantidad${agregarElProducto.id}">Cantidad: ${agregarElProducto.cantidad}</p>
-            <button id="eliminar${agregarElProducto.id}">Eliminar</button>
-    `
-    carritoModal.appendChild(div)
-    const btnEliminar = document.querySelector(`#eliminar${agregarElProducto.id}`)
-    btnEliminar.addEventListener(`click`, ()=>{
-        console.log(agregarElProducto.id)
-        btnEliminar.parentElement.remove();
-        enElCarrito = enElCarrito.filter(el=>el.id != agregarElProducto.id)
+function mostrarElCarrito(agregarProducto) {
+  const { tipo, cantidad, id, precio } = agregarProducto;
+  let div = document.createElement("div");
+  div.className = `d-flex justify-content-around`;
+  div.innerHTML = `
+            <p>${tipo}</p>
+            <p>Precio: $${precio}</p>
+            <p id="cantidad${id}">Cantidad: ${cantidad}</p>
+            <button id="eliminar${id}">Eliminar</button>
+    `;
+  carritoModal.appendChild(div);
+  const btnEliminar = document.querySelector(`#eliminar${id}`);
+  btnEliminar.addEventListener(`click`, () => {
+    Swal.fire({
+      title: "¿Está seguro?",
+      text: "Usted va a eliminar un producto del carrito!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Si, sácalo!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire("Deleted!", "Your file has been deleted.", "success");
+      }
+    });
+    btnEliminar.parentElement.remove();
+    enElCarrito = enElCarrito.filter((el) => el.id != agregarProducto.id);
     actualizarCarritoDeCompras();
     localStorage.setItem(`carritoDeCompras`, JSON.stringify(enElCarrito));
-})    
-    }
-    localStorage.setItem(`carritoDeCompras`, JSON.stringify(enElCarrito));
+  });
 }
-
-
-
-
-
-
 
 // Función para poder actualizar el carrito cuando sea necesario
-function actualizarCarritoDeCompras (){
-    totalPrice.innerText=enElCarrito.reduce((acc,el)=>acc+(el.cantidad*el.precio), 0)
+function actualizarCarritoDeCompras() {
+  totalPrice.innerText = enElCarrito.reduce(
+    (acc, el) => acc + (el.cantidad * el.precio),
+    0
+  );
 }
-
 
 // Función para recuperar info guardada en el storage
-function recuperarData (){
-    enElCarrito = JSON.parse(localStorage.getItem('carritoDeCompras')) || []
+function recuperarData() {
+  enElCarrito = JSON.parse(localStorage.getItem("carritoDeCompras")) || [];
+
+  enElCarrito.forEach((el) => {
+    mostrarElCarrito(el);
+    enElCarrito.push(el);
+    actualizarCarritoDeCompras();
+  });
 }
+
+recuperarData();
 
