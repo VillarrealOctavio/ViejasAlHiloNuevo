@@ -12,68 +12,70 @@ const filtradoBolsos = document.querySelector("#filtrarBolsos");
 const filtradoEstuches = document.querySelector("#filtrarEstuches");
 const filtradoLatas = document.querySelector("#filtrarLatas");
 const filtradoMates = document.querySelector("#filtrarMates");
-
-for (const boton of btn) {
-  boton.addEventListener("click", () => {
-    switch (boton.id) {
-      case "Mates":
-        mostrarProductos(stockMates);
-        break;
-      case "Bolsos":
-        mostrarProductos(stockBolsos);
-        break;
-      case "Estuches":
-        mostrarProductos(stockEstuches);
-        break;
-      case "Latas":
-        mostrarProductos(stockLatas);
-        break;
-
-      default:
-        Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: 'Something went wrong!',
-          footer: '<a href="">Why do I have this issue?</a>'
-        })
-        break;
-    }
-  });
-}
+const filtrame = document.getElementsByClassName("filtros")
 
 // EVENTOS
-// Para bolsos
-filtradoBolsos.addEventListener(`change`, () => {
-  filtradoBolsos.value == "all"
-    ? mostrarProductos(stockBolsos)
-    : mostrarProductos(
-        stockBolsos.filter((el) => el.clase == filtradoBolsos.value)
-      );
-});
-// // Para estuches
-filtradoEstuches.addEventListener(`change`, () => {
-  filtradoEstuches.value == "all"
-    ? mostrarProductos(stockEstuches)
-    : mostrarProductos(
-        stockEstuches.filter((el) => el.clase == filtradoEstuches.value)
-      );
-});
-// // Para latas
-filtradoLatas.addEventListener(`change`, () => {
-  filtradoLatas.value == "all"
-    ? mostrarProductos(stockLatas)
-    : mostrarProductos(
-        stockLatas.filter((el) => el.clase == filtradoLatas.value)
-      );
-});
-// // Para mates
-filtradoMates.addEventListener(`change`, () => {
-  filtradoMates.value == "all"
-    ? mostrarProductos(stockMates)
-    : mostrarProductos(
-        stockMates.filter((el) => el.clase == filtradoMates.value)
-      );
-});
+// Este evento es para determinar qupe etiqueta se presiona para así mostrar los productos.
+for (const boton of btn) {
+    boton.addEventListener("click", () => {
+      switch (boton.id) {
+        case "Mates":
+          mostrarProductos(stockMates);
+          break;
+        case "Bolsos":
+          mostrarProductos(stockBolsos);
+          break;
+        case "Estuches":
+          mostrarProductos(stockEstuches);
+          break;
+        case "Latas":
+          mostrarProductos(stockLatas);
+          break;
+  
+        default:
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Something went wrong!',
+            footer: '<a href="">Why do I have this issue?</a>'
+          })
+          break;
+      }
+    });
+  }
+
+
+// Este evento es para poder realizar filtros a cada uno de los stocks de productos.
+ for(const filtro of filtrame){
+     filtro.addEventListener(`change`, ()=>{
+         switch (filtro.id) {
+            case "filtrarEstuches":
+                (filtradoEstuches.value=="all")?
+                mostrarProductos(stockEstuches):mostrarProductos(stockEstuches.filter(el=>el.clase==filtradoEstuches.value)) 
+            break;
+            case "filtrarMates":
+                (filtradoMates.value=="all")?
+                mostrarProductos(stockMates):mostrarProductos(stockMates.filter(el=>el.clase==filtradoMates.value))
+            break;
+            case "filtrarLatas":
+                (filtradoLatas.value=="all")?
+                mostrarProductos(stockLatas):mostrarProductos(stockLatas.filter(el=>el.clase==filtradoLatas.value))
+            break;
+            case "filtrarBolsos":
+                (filtradoBolsos.value=="all")?
+                mostrarProductos(stockBolsos):mostrarProductos(stockBolsos.filter(el=>el.clase==filtradoBolsos.value))
+            break;
+            default:
+                    Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong!',
+                    footer: '<a href="">Why do I have this issue?</a>'
+                    })
+            break;
+         }
+     })
+ }
 
 // FUNCIONES
 // Para bolsos
