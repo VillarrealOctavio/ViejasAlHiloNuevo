@@ -1,12 +1,32 @@
-// arrays
+// funciones
+function quitarIcono(){
+  const div = document.createElement("div")
+  div.id=`cargando`
+  div.innerHTML = `
+           <img src="assets/img/iconos/barra-de-carga.png" alt="icono">
+      `
+  conenedorProductos.appendChild(div);
+  const carga = document.querySelector(`#cargando`)
+  setTimeout(()=>{
+      carga.remove();
+  },2000)
+}
+
+function showProduct(array){
+  setTimeout(()=>{
+      mostrarProductos(array)
+  }, 2000)
+}
+
+// arrays----------------------------------------------------------------
 let enElCarrito = [];
 
-// CONTENEDORES
+// CONTENEDORES----------------------------------------------------------------
 const conenedorProductos = document.getElementById("contenedorProductos");
 const carritoModal = document.querySelector(".modalCarrito");
 const totalPrice = document.querySelector("#precioTotal");
 
-// CONTENEDORES PARA EVENTOS
+// CONTENEDORES PARA EVENTOS----------------------------------------------------------------
 const btn = document.getElementsByClassName("fontMegrim");
 const filtradoBolsos = document.querySelector("#filtrarBolsos");
 const filtradoEstuches = document.querySelector("#filtrarEstuches");
@@ -14,24 +34,56 @@ const filtradoLatas = document.querySelector("#filtrarLatas");
 const filtradoMates = document.querySelector("#filtrarMates");
 const filtrame = document.getElementsByClassName("filtros")
 
-// EVENTOS
-// Este evento es para determinar qupe etiqueta se presiona para así mostrar los productos.
+// EVENTOS----------------------------------------------------------------
+// Este evento es para determinar qué etiqueta se presiona para así mostrar los productos.
 for (const boton of btn) {
     boton.addEventListener("click", () => {
+      /*setTimeout(()=>{
+        switch (boton.id) {
+          case "Mates":
+            mostrarProductos(stockMates);
+            break;
+          case "Bolsos":
+            mostrarProductos(stockBolsos);
+            break;
+          case "Estuches":
+            mostrarProductos(stockEstuches);
+            break;
+          case "Latas":
+            mostrarProductos(stockLatas);
+            break;
+    
+          default:
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'Something went wrong!',
+              footer: '<a href="">Why do I have this issue?</a>'
+            })
+            break;
+        }
+      }, 2000)*/
       switch (boton.id) {
         case "Mates":
-          mostrarProductos(stockMates);
+          conenedorProductos.innerHTML="";
+          quitarIcono();
+          showProduct(stockMates)
           break;
         case "Bolsos":
-          mostrarProductos(stockBolsos);
+          conenedorProductos.innerHTML="";
+          quitarIcono()
+          showProduct(stockBolsos)
           break;
         case "Estuches":
-          mostrarProductos(stockEstuches);
+          conenedorProductos.innerHTML="";
+          quitarIcono();
+          showProduct(stockEstuches);
           break;
         case "Latas":
-          mostrarProductos(stockLatas);
-          break;
-  
+          conenedorProductos.innerHTML="";
+          quitarIcono();
+          showProduct(stockLatas);
+          break;  
         default:
           Swal.fire({
             icon: 'error',
@@ -77,7 +129,7 @@ for (const boton of btn) {
      })
  }
 
-// FUNCIONES
+// FUNCIONES----------------------------------------------------------------
 // Para bolsos
 function mostrarProductos(array) {
   console.log(array);
@@ -200,6 +252,5 @@ function recuperarData() {
     actualizarCarritoDeCompras();
   });
 }
-
 recuperarData();
 
