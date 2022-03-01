@@ -1,3 +1,5 @@
+/*
+
 // Bolsos
 const stockBolsos = [
     {id:11, tipo:"Homero", precio: 1500, img:`assets/img/bolsos/Bolso-D-OH.png`, cantidad: 1, clase: "personalizado"},
@@ -101,17 +103,18 @@ const stockEstuches = [
 ];
 
 const stockLatas = [
-    {id:41, tipo:"Latas. Amarillo", precio:500, cantidad:1, clase:"vegetal", img:`assets/img/latas/latas amarillo.jpg`},
-    {id:42, tipo:"Latas. Azul", precio:500, cantidad:1, clase:"vegetal", img:`assets/img/latas/latas azul.jpg`},
-    {id:43, tipo:"Latas. Blanco", precio:500, cantidad:1, clase:"vegetal", img:`assets/img/latas/latas blanco.jpg`},
-    {id:44, tipo:"Latas. Celeste", precio:500, cantidad:1, clase:"vegetal", img:`assets/img/latas/latas Celeste.jpg`},
-    {id:45, tipo:"Latas. Fucsia", precio:500, cantidad:1, clase:"vegetal", img:`assets/img/latas/latas fucsia.jpg`},
-    {id:46, tipo:"Latas. Lila", precio:500, cantidad:1, clase:"vegetal", img:`assets/img/latas/latas Lila.jpg`},
-    {id:47, tipo:"Latas. Naranja", precio:500, cantidad:1, clase:"vegetal", img:`assets/img/latas/latas Naranja.jpg`},
-    {id:48, tipo:"Latas. Rojo", precio:500, cantidad:1, clase:"vegetal", img:`assets/img/latas/latas Rojo.jpg`},
-    {id:49, tipo:"Latas. Verde agua", precio:500, cantidad:1, clase:"vegetal", img:`assets/img/latas/latas verde agua.jpg`},
-    {id:410, tipo:"Latas. Verde musgo", precio:500, cantidad:1, clase:"vegetal", img:`assets/img/latas/latas verde musgo.jpg`},
-    {id:411, tipo:"Latas. Verde negras", precio:500, cantidad:1, clase:"vegetal", img:`assets/img/latas/latas verde negras.jpg`},
-    {id:412, tipo:"Latas. Marrón", precio:500, cantidad:1, clase:"vegetal", img:`assets/img/latas/latasmarron.jpg`}
+    {id:41, tipo:"Latas. Amarillo", precio:500, cantidad:1, clase:"vegetal", img:"assets/img/latas/latas amarillo.jpg"},
+    {id:42, tipo:"Latas. Azul", precio:500, cantidad:1, clase:"vegetal", img:"assets/img/latas/latas azul.jpg"},
+    {id:43, tipo:"Latas. Blanco", precio:500, cantidad:1, clase:"vegetal", img:"assets/img/latas/latas blanco.jpg"},
+    {id:44, tipo:"Latas. Celeste", precio:500, cantidad:1, clase:"vegetal", img:"assets/img/latas/latas Celeste.jpg"},
+    {id:45, tipo:"Latas. Fucsia", precio:500, cantidad:1, clase:"vegetal", img:"assets/img/latas/latas fucsia.jpg"},
+    {id:46, tipo:"Latas. Lila", precio:500, cantidad:1, clase:"vegetal", img:"assets/img/latas/latas Lila.jpg"},
+    {id:47, tipo:"Latas. Naranja", precio:500, cantidad:1, clase:"vegetal", img:"assets/img/latas/latas Naranja.jpg"},
+    {id:48, tipo:"Latas. Rojo", precio:500, cantidad:1, clase:"vegetal", img:"assets/img/latas/latas Rojo.jpg"},
+    {id:49, tipo:"Latas. Verde agua", precio:500, cantidad:1, clase:"vegetal", img:"assets/img/latas/latas verde agua.jpg"},
+    {id:410, tipo:"Latas. Verde musgo", precio:500, cantidad:1, clase:"vegetal", img:"assets/img/latas/latas verde musgo.jpg"},
+    {id:411, tipo:"Latas. Verde negras", precio:500, cantidad:1, clase:"vegetal", img:"assets/img/latas/latas verde negras.jpg"},
+    {id:412, tipo:"Latas. Marrón", precio:500, cantidad:1, clase:"vegetal", img:"assets/img/latas/latasmarron.jpg"}
 ];
 
+*/

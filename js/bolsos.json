@@ -1,0 +1,346 @@
+[
+  {
+    "id": 11,
+    "tipo": "Homero",
+    "precio": 1500,
+    "img": "assets/img/bolsos/Bolso-D-OH.png",
+    "cantidad": 1,
+    "clase": "personalizado"
+  },
+  {
+    "id": 12,
+    "tipo": "Homero",
+    "precio": 1500,
+    "img": "assets/img/bolsos/Bolso-frente-D-OH.png",
+    "cantidad": 1,
+    "clase": "personalizado"
+  },
+  {
+    "id": 13,
+    "tipo": "Homero",
+    "precio": 1500,
+    "img": "assets/img/bolsos/Homero1.png",
+    "cantidad": 1,
+    "clase": "personalizado"
+  },
+  {
+    "id": 14,
+    "tipo": "Sasuke",
+    "precio": 2000,
+    "img": "assets/img/bolsos/Sasuke.png",
+    "cantidad": 1,
+    "clase": "personalizado"
+  },
+  {
+    "id": 15,
+    "tipo": "Seiga",
+    "precio": 2000,
+    "img": "assets/img/bolsos/Seiga.png",
+    "cantidad": 1,
+    "clase": "personalizado"
+  },
+  {
+    "id": 16,
+    "tipo": "Camuflado-Naranja-Verde-Blanco",
+    "precio": 2000,
+    "img": "assets/img/bolsos/Camuflado naranja-verde- blanco.jpg",
+    "cantidad": 1,
+    "clase": "camuflado"
+  },
+  {
+    "id": 17,
+    "tipo": "Camuflado-Verde fluor-Celeste-Negro",
+    "precio": 2000,
+    "img": "assets/img/bolsos/Camuflado verde fluor - celeste - negro.jpg",
+    "cantidad": 1,
+    "clase": "camuflado"
+  },
+  {
+    "id": 18,
+    "tipo": "Camuflado-Verde-Marrón-Negro",
+    "precio": 2000,
+    "img": "assets/img/bolsos/Camuflado verde- marron -negro.jpg",
+    "cantidad": 1,
+    "clase": "camuflado"
+  },
+  {
+    "id": 19,
+    "tipo": "Circulos",
+    "precio": 2000,
+    "img": "assets/img/bolsos/Circulos grandes.jpg",
+    "cantidad": 1,
+    "clase": "estampado"
+  },
+  {
+    "id": 110,
+    "tipo": "Circulos",
+    "precio": 2000,
+    "img": "assets/img/bolsos/Circulos grandess.jpg",
+    "cantidad": 1,
+    "clase": "estampado"
+  },
+  {
+    "id": 111,
+    "tipo": "Dibujos geométricos",
+    "precio": 2000,
+    "img": "assets/img/bolsos/Dibujos geometricos.jpg",
+    "cantidad": 1,
+    "clase": "estampado"
+  },
+  {
+    "id": 112,
+    "tipo": "Estampado-Caro",
+    "precio": 2000,
+    "img": "assets/img/bolsos/Estampado Caro.jpg",
+    "cantidad": 1,
+    "clase": "estampado"
+  },
+  {
+    "id": 113,
+    "tipo": "Étnico-Cyan-Rojo",
+    "precio": 2000,
+    "img": "assets/img/bolsos/Etnico cyan-rojo 2.jpg",
+    "cantidad": 1,
+    "clase": "estampado"
+  },
+  {
+    "id": 114,
+    "tipo": "Étnico-Cyan-Rojo",
+    "precio": 2000,
+    "img": "assets/img/bolsos/Etnico cyan-rojo.jpg",
+    "cantidad": 1,
+    "clase": "estampado"
+  },
+  {
+    "id": 115,
+    "tipo": "Étnico-Fronteras-Celeste",
+    "precio": 2000,
+    "img": "assets/img/bolsos/Etnico fronteras celeste.jpg",
+    "cantidad": 1,
+    "clase": "estampado"
+  },
+  {
+    "id": 116,
+    "tipo": "Étnico-Fronteras-Marrón",
+    "precio": 2000,
+    "img": "assets/img/bolsos/Etnico fronteras marron.jpg",
+    "cantidad": 1,
+    "clase": "estampado"
+  },
+  {
+    "id": 117,
+    "tipo": "Étnico-Negro",
+    "precio": 2000,
+    "img": "assets/img/bolsos/Etnico negro.jpg",
+    "cantidad": 1,
+    "clase": "estampado"
+  },
+  {
+    "id": 118,
+    "tipo": "Étnico-Pasteles",
+    "precio": 2000,
+    "img": "assets/img/bolsos/Etnico pasteles.jpg",
+    "cantidad": 1,
+    "clase": "estampado"
+  },
+  {
+    "id": 119,
+    "tipo": "Flor Sandalia",
+    "precio": 2000,
+    "img": "assets/img/bolsos/Flor Sandalia.jpg",
+    "cantidad": 1,
+    "clase": "estampado"
+  },
+  {
+    "id": 120,
+    "tipo": "Flores Acuarela",
+    "precio": 2000,
+    "img": "assets/img/bolsos/Flores acuarela.jpg",
+    "cantidad": 1,
+    "clase": "estampado"
+  },
+  {
+    "id": 121,
+    "tipo": "Flores Marina",
+    "precio": 2000,
+    "img": "assets/img/bolsos/Flores marinas.jpg",
+    "cantidad": 1,
+    "clase": "estampado"
+  },
+  {
+    "id": 122,
+    "tipo": "Flores y Hojas",
+    "precio": 2000,
+    "img": "assets/img/bolsos/Flores y hojas.jpg",
+    "cantidad": 1,
+    "clase": "estampado"
+  },
+  {
+    "id": 123,
+    "tipo": "Guarda geométrica",
+    "precio": 2000,
+    "img": "assets/img/bolsos/Guarda geometrica azul.jpg",
+    "cantidad": 1,
+    "clase": "estampado"
+  },
+  {
+    "id": 124,
+    "tipo": "Hojas con rayas",
+    "precio": 2000,
+    "img": "assets/img/bolsos/Hojitas con rayas.jpg",
+    "cantidad": 1,
+    "clase": "estampado"
+  },
+  {
+    "id": 125,
+    "tipo": "Hojas grandes",
+    "precio": 2000,
+    "img": "assets/img/bolsos/Hojitas grandes.jpg",
+    "cantidad": 1,
+    "clase": "estampado"
+  },
+  {
+    "id": 126,
+    "tipo": "Hojas verdes",
+    "precio": 2000,
+    "img": "assets/img/bolsos/Hojitas verdes.jpg",
+    "cantidad": 1,
+    "clase": "estampado"
+  },
+  {
+    "id": 127,
+    "tipo": "Gris-Naranja",
+    "precio": 2000,
+    "img": "assets/img/bolsos/Liso Gris- naranja.jpg",
+    "cantidad": 1,
+    "clase": "liso"
+  },
+  {
+    "id": 128,
+    "tipo": "Negro-Verde",
+    "precio": 2000,
+    "img": "assets/img/bolsos/Liso Negro - Verde.jpg",
+    "cantidad": 1,
+    "clase": "liso"
+  },
+  {
+    "id": 129,
+    "tipo": "Negro con cinta estampada",
+    "precio": 2000,
+    "img": "assets/img/bolsos/Liso Negro con cinta estampada 1.jpg",
+    "cantidad": 1,
+    "clase": "liso"
+  },
+  {
+    "id": 130,
+    "tipo": "Negro con cinta estampada a rayas",
+    "precio": 2000,
+    "img": "assets/img/bolsos/Liso Negro con cinta estampada a rayas 1.jpg",
+    "cantidad": 1,
+    "clase": "liso"
+  },
+  {
+    "id": 131,
+    "tipo": "Negro con cinta estampada a rayas",
+    "precio": 2000,
+    "img": "assets/img/bolsos/Liso Negro con cinta estampada a rayas.jpg",
+    "cantidad": 1,
+    "clase": "liso"
+  },
+  {
+    "id": 132,
+    "tipo": "Negro con cinta estampada a cuadros",
+    "precio": 2000,
+    "img": "assets/img/bolsos/Liso Negro con cinta estampada cuadros.jpg",
+    "cantidad": 1,
+    "clase": "liso"
+  },
+  {
+    "id": 133,
+    "tipo": "Negro con cinta estampada",
+    "precio": 2000,
+    "img": "assets/img/bolsos/Liso Negro con cinta estampada.jpg",
+    "cantidad": 1,
+    "clase": "liso"
+  },
+  {
+    "id": 134,
+    "tipo": "Negro",
+    "precio": 2000,
+    "img": "assets/img/bolsos/Liso Negro.jpg",
+    "cantidad": 1,
+    "clase": "liso"
+  },
+  {
+    "id": 135,
+    "tipo": "Mandala azul",
+    "precio": 2000,
+    "img": "assets/img/bolsos/Mandala azul.jpg",
+    "cantidad": 1,
+    "clase": "estampado"
+  },
+  {
+    "id": 136,
+    "tipo": "Mandala-Flor-Arcoiris",
+    "precio": 2000,
+    "img": "assets/img/bolsos/Mandala flor arco iris.jpg",
+    "cantidad": 1,
+    "clase": "estampado"
+  },
+  {
+    "id": 137,
+    "tipo": "Mandala fuscia",
+    "precio": 2000,
+    "img": "assets/img/bolsos/Mandala Fucsia.jpg",
+    "cantidad": 1,
+    "clase": "estampado"
+  },
+  {
+    "id": 138,
+    "tipo": "Mandala geométrica",
+    "precio": 2000,
+    "img": "assets/img/bolsos/Mandala geometrico.jpg",
+    "cantidad": 1,
+    "clase": "estampado"
+  },
+  {
+    "id": 139,
+    "tipo": "Mandala naranja",
+    "precio": 2000,
+    "img": "assets/img/bolsos/Mandala Naranja.jpg",
+    "cantidad": 1,
+    "clase": "estampado"
+  },
+  {
+    "id": 140,
+    "tipo": "Verde-Azul-Celeste",
+    "precio": 2000,
+    "img": "assets/img/bolsos/Rayas horizontal azul-verde-celeste.jpg",
+    "cantidad": 1,
+    "clase": "rayas"
+  },
+  {
+    "id": 141,
+    "tipo": "Gris-Fuscia-Cyan",
+    "precio": 2000,
+    "img": "assets/img/bolsos/Rayas horizontal gris- fucsia-cyan.jpg",
+    "cantidad": 1,
+    "clase": "rayas"
+  },
+  {
+    "id": 142,
+    "tipo": "Naranja-Naranja Claro-Blanco",
+    "precio": 2000,
+    "img": "assets/img/bolsos/Rayas horizontal naranja-naranja claro-blanco.jpg",
+    "cantidad": 1,
+    "clase": "rayas"
+  },
+  {
+    "id": 143,
+    "tipo": "Rombos",
+    "precio": 2000,
+    "img": "assets/img/bolsos/Rombos.jpg",
+    "cantidad": 1,
+    "clase": "estampado"
+  }
+] 

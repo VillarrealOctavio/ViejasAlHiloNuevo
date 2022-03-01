@@ -1,4 +1,20 @@
-// funciones
+// arrays----------------------------------------------------------------
+let enElCarrito = [];
+
+// CONTENEDORES----------------------------------------------------------------
+const conenedorProductos = document.getElementById("contenedorProductos");
+const carritoModal = document.querySelector(".modalCarrito");
+const totalPrice = document.querySelector("#precioTotal");
+
+// CONTENEDORES PARA EVENTOS----------------------------------------------------------------
+const btn = document.getElementsByClassName("fontMegrim");
+const filtradoBolsos = document.querySelector("#filtrarBolsos");
+const filtradoEstuches = document.querySelector("#filtrarEstuches");
+const filtradoLatas = document.querySelector("#filtrarLatas");
+const filtradoMates = document.querySelector("#filtrarMates");
+const filtrame = document.getElementsByClassName("filtros")
+
+// FUNCIONES
 function quitarIcono(){
   const div = document.createElement("div")
   div.id=`cargando`
@@ -18,56 +34,18 @@ function showProduct(array){
   }, 2000)
 }
 
-// arrays----------------------------------------------------------------
-let enElCarrito = [];
-
-// CONTENEDORES----------------------------------------------------------------
-const conenedorProductos = document.getElementById("contenedorProductos");
-const carritoModal = document.querySelector(".modalCarrito");
-const totalPrice = document.querySelector("#precioTotal");
-
-// CONTENEDORES PARA EVENTOS----------------------------------------------------------------
-const btn = document.getElementsByClassName("fontMegrim");
-const filtradoBolsos = document.querySelector("#filtrarBolsos");
-const filtradoEstuches = document.querySelector("#filtrarEstuches");
-const filtradoLatas = document.querySelector("#filtrarLatas");
-const filtradoMates = document.querySelector("#filtrarMates");
-const filtrame = document.getElementsByClassName("filtros")
-
 // EVENTOS----------------------------------------------------------------
 // Este evento es para determinar qué etiqueta se presiona para así mostrar los productos.
 for (const boton of btn) {
     boton.addEventListener("click", () => {
-      /*setTimeout(()=>{
-        switch (boton.id) {
-          case "Mates":
-            mostrarProductos(stockMates);
-            break;
-          case "Bolsos":
-            mostrarProductos(stockBolsos);
-            break;
-          case "Estuches":
-            mostrarProductos(stockEstuches);
-            break;
-          case "Latas":
-            mostrarProductos(stockLatas);
-            break;
-    
-          default:
-            Swal.fire({
-              icon: 'error',
-              title: 'Oops...',
-              text: 'Something went wrong!',
-              footer: '<a href="">Why do I have this issue?</a>'
-            })
-            break;
-        }
-      }, 2000)*/
       switch (boton.id) {
         case "Mates":
           conenedorProductos.innerHTML="";
           quitarIcono();
-          showProduct(stockMates)
+          fetch(`mates.json`)
+            .then(Response => Response.json())
+            .then(data => showProduct(data))
+          // showProduct(stockMates)
           break;
         case "Bolsos":
           conenedorProductos.innerHTML="";
@@ -254,3 +232,8 @@ function recuperarData() {
 }
 recuperarData();
 
+// Agregando API
+fetch(`productos.json`)
+  .then(Response => Response.json())
+  .then(data => mostrarProductos(data))
+  .catch(console.log("Error en algún lugar"))
