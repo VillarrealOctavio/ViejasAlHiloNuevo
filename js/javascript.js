@@ -5,6 +5,7 @@ let enElCarrito = [];
 const conenedorProductos = document.getElementById("contenedorProductos");
 const carritoModal = document.querySelector(".modalCarrito");
 const totalPrice = document.querySelector("#precioTotal");
+const APIimg = document.querySelector(`#imgAPIs`)
 
 // CONTENEDORES PARA EVENTOS----------------------------------------------------------------
 const btn = document.getElementsByClassName("fontMegrim");
@@ -45,7 +46,7 @@ for (const boton of btn) {
           fetch(`mates.json`)
             .then(Response => Response.json())
             .then(data => showProduct(data))
-          // showProduct(stockMates)
+          showProduct(stockMates)
           break;
         case "Bolsos":
           conenedorProductos.innerHTML="";
@@ -233,7 +234,37 @@ function recuperarData() {
 recuperarData();
 
 // Agregando API
-fetch(`productos.json`)
-  .then(Response => Response.json())
-  .then(data => mostrarProductos(data))
-  .catch(console.log("Error en algún lugar"))
+let url = `https://jsonplaceholder.typicode.com/photos`
+fetch(url)
+    .then(Response => Response.json())
+    .then(data => {
+      data.forEach(album => {
+        const {albumId, title, id, url} = album
+        const div =  document.createElement(`div`)
+        div.className= `col-md-3`
+        div.innerHTML = ` 
+            <div class="card" style="width: 18rem;">
+              <img src="${url}" class="card-img-top" alt="img">
+              <div class="card-body">
+                <h5 class="card-title">${title}</h5>
+                <p>${id}</p>
+                <p class="card-text">${albumId}</p>
+              </div>
+            </div>
+        `
+        APIimg.appendChild(div)
+      })
+    })
+    .catch(error => console.log(error))
+
+// Otra API
+let urlHero = `https://akabab.github.io/superhero-api/api/all.json`
+fetch(urlHero)
+    .then(Response => Response.json())
+    .then(data => console.log(data))
+
+
+
+
+
+    // 1:16
