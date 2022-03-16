@@ -3,7 +3,7 @@
     "id": 21,
     "tipo": "Mate azul",
     "precio": 500,
-    "img": "assets/img/mates/mate azul.jpg",
+    "img": "/assets/img/mates/mate azul.jpg",
     "cantidad": 1,
     "clase": "vidrio"
   },
@@ -11,7 +11,7 @@
     "id": 22,
     "tipo": "Mate blanco",
     "precio": 500,
-    "img": "assets/img/mates/mate blanco.jpg",
+    "img": "/assets/img/mates/mate blanco.jpg",
     "cantidad": 1,
     "clase": "vidrio"
   },
@@ -19,7 +19,7 @@
     "id": 23,
     "tipo": "Mate caramelo",
     "precio": 500,
-    "img": "assets/img/mates/mate caramelo.jpg",
+    "img": "/assets/img/mates/mate caramelo.jpg",
     "cantidad": 1,
     "clase": "vidrio"
   },
@@ -27,7 +27,7 @@
     "id": 24,
     "tipo": "Mate carmin",
     "precio": 500,
-    "img": "assets/img/mates/mate carmin.jpg",
+    "img": "/assets/img/mates/mate carmin.jpg",
     "cantidad": 1,
     "clase": "vidrio"
   },
@@ -35,7 +35,7 @@
     "id": 25,
     "tipo": "Mate de plástico azul",
     "precio": 500,
-    "img": "assets/img/mates/Mate de plastico azul.jpg",
+    "img": "/assets/img/mates/Mate de plastico azul.jpg",
     "cantidad": 1,
     "clase": "plastico"
   },
@@ -43,7 +43,7 @@
     "id": 26,
     "tipo": "Mate de plástico celeste",
     "precio": 500,
-    "img": "assets/img/mates/Mate de plastico celeste.jpg",
+    "img": "/assets/img/mates/Mate de plastico celeste.jpg",
     "cantidad": 1,
     "clase": "plastico"
   },
@@ -51,7 +51,7 @@
     "id": 27,
     "tipo": "Mate de  plástico fucsia",
     "precio": 500,
-    "img": "assets/img/mates/Mate de plastico fucsia.jpg",
+    "img": "/assets/img/mates/Mate de plastico fucsia.jpg",
     "cantidad": 1,
     "clase": "plastico"
   },
@@ -59,7 +59,7 @@
     "id": 28,
     "tipo": "Mate de plástico lila claro",
     "precio": 500,
-    "img": "assets/img/mates/Mate de plastico lila claro.jpg",
+    "img": "/assets/img/mates/Mate de plastico lila claro.jpg",
     "cantidad": 1,
     "clase": "plastico"
   },
@@ -67,7 +67,7 @@
     "id": 29,
     "tipo": "Mate de plástico lila",
     "precio": 500,
-    "img": "assets/img/mates/Mate de plastico lila.jpg",
+    "img": "/assets/img/mates/Mate de plastico lila.jpg",
     "cantidad": 1,
     "clase": "plastico"
   },
@@ -75,7 +75,7 @@
     "id": 210,
     "tipo": "Mate de plástico rosa chicle",
     "precio": 500,
-    "img": "assets/img/mates/Mate de plastico rosa chicle.jpg",
+    "img": "/assets/img/mates/Mate de plastico rosa chicle.jpg",
     "cantidad": 1,
     "clase": "plastico"
   },
@@ -83,7 +83,7 @@
     "id": 211,
     "tipo": "Mate de plástico rosa claro",
     "precio": 500,
-    "img": "assets/img/mates/Mate de plastico rosa claro.jpg",
+    "img": "/assets/img/mates/Mate de plastico rosa claro.jpg",
     "cantidad": 1,
     "clase": "plastico"
   },
@@ -91,7 +91,7 @@
     "id": 212,
     "tipo": "Mate de plástico rosa",
     "precio": 500,
-    "img": "assets/img/mates/Mate de plastico rosa.jpg",
+    "img": "/assets/img/mates/Mate de plastico rosa.jpg",
     "cantidad": 1,
     "clase": "plastico"
   },
@@ -99,7 +99,7 @@
     "id": 213,
     "tipo": "Mate de plástico terracota",
     "precio": 500,
-    "img": "assets/img/mates/Mate de plastico terracota.jpg",
+    "img": "/assets/img/mates/Mate de plastico terracota.jpg",
     "cantidad": 1,
     "clase": "plastico"
   },
@@ -107,7 +107,7 @@
     "id": 214,
     "tipo": "Mate de plástico turqueza",
     "precio": 500,
-    "img": "assets/img/mates/Mate de plastico turqueza.jpg",
+    "img": "/assets/img/mates/Mate de plastico turqueza.jpg",
     "cantidad": 1,
     "clase": "plastico"
   },
@@ -115,7 +115,7 @@
     "id": 215,
     "tipo": "Mate de plástico verde agua",
     "precio": 500,
-    "img": "assets/img/mates/Mate de plastico verde agua.jpg",
+    "img": "/assets/img/mates/Mate de plastico verde agua.jpg",
     "cantidad": 1,
     "clase": "plastico"
   },
@@ -123,7 +123,7 @@
     "id": 216,
     "tipo": "Mate de plástico verde hoja sacayerba",
     "precio": 500,
-    "img": "assets/img/mates/Mate de plastico verde hoja sacayerba.jpg",
+    "img": "/assets/img/mates/Mate de plastico verde hoja sacayerba.jpg",
     "cantidad": 1,
     "clase": "plastico"
   },
@@ -131,7 +131,7 @@
     "id": 217,
     "tipo": "Mate de plástico verde manzana",
     "precio": 500,
-    "img": "assets/img/mates/Mate de plastico verde manzana.jpg",
+    "img": "/assets/img/mates/Mate de plastico verde manzana.jpg",
     "cantidad": 1,
     "clase": "plastico"
   },
@@ -139,7 +139,7 @@
     "id": 218,
     "tipo": "Mate de plástico verde",
     "precio": 500,
-    "img": "assets/img/mates/Mate de plastico verde.jpg",
+    "img": "/assets/img/mates/Mate de plastico verde.jpg",
     "cantidad": 1,
     "clase": "plastico"
   },
@@ -147,7 +147,7 @@
     "id": 219,
     "tipo": "Mate de plástico violeta",
     "precio": 500,
-    "img": "assets/img/mates/Mate de plastico violeta.jpg",
+    "img": "/assets/img/mates/Mate de plastico violeta.jpg",
     "cantidad": 1,
     "clase": "plastico"
   },
@@ -155,7 +155,7 @@
     "id": 220,
     "tipo": "Mate fucsia",
     "precio": 500,
-    "img": "assets/img/mates/mate fucsia.jpg",
+    "img": "/assets/img/mates/mate fucsia.jpg",
     "cantidad": 1,
     "clase": "vidrio"
   },
@@ -163,7 +163,7 @@
     "id": 221,
     "tipo": "Mate marrón claro",
     "precio": 500,
-    "img": "assets/img/mates/mate marron claro.jpg",
+    "img": "/assets/img/mates/mate marron claro.jpg",
     "cantidad": 1,
     "clase": "vidrio"
   },
@@ -171,7 +171,7 @@
     "id": 222,
     "tipo": "Mate marrón oscuro",
     "precio": 500,
-    "img": "assets/img/mates/mate marron oscuro.jpg",
+    "img": "/assets/img/mates/mate marron oscuro.jpg",
     "cantidad": 1,
     "clase": "vidrio"
   },
@@ -179,7 +179,7 @@
     "id": 223,
     "tipo": "Mate naranja",
     "precio": 500,
-    "img": "assets/img/mates/mate naranja.jpg",
+    "img": "/assets/img/mates/mate naranja.jpg",
     "cantidad": 1,
     "clase": "vidrio"
   },
@@ -187,7 +187,7 @@
     "id": 224,
     "tipo": "Mate negro",
     "precio": 500,
-    "img": "assets/img/mates/mate negro.jpg",
+    "img": "/assets/img/mates/mate negro.jpg",
     "cantidad": 1,
     "clase": "vidrio"
   },
@@ -195,7 +195,7 @@
     "id": 225,
     "tipo": "Mate rojo",
     "precio": 500,
-    "img": "assets/img/mates/mate rojo.jpg",
+    "img": "/assets/img/mates/mate rojo.jpg",
     "cantidad": 1,
     "clase": "vidrio"
   },
@@ -203,7 +203,7 @@
     "id": 226,
     "tipo": "Mate verde agua",
     "precio": 500,
-    "img": "assets/img/mates/mate verde agua.jpg",
+    "img": "/assets/img/mates/mate verde agua.jpg",
     "cantidad": 1,
     "clase": "vidrio"
   }

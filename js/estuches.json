@@ -5,7 +5,7 @@
     "precio": 2500,
     "cantidad": 1,
     "clase": "bolsa",
-    "img": "assets/img/estuches/Bolsa para tablas Amarillo-verde.jpg"
+    "img": "/assets/img/estuches/Bolsa para tablas Amarillo-verde.jpg"
   },
   {
     "id": 32,
@@ -13,7 +13,7 @@
     "precio": 2500,
     "cantidad": 1,
     "clase": "bolsa",
-    "img": "assets/img/estuches/Bolsa para tablas Blanco-amarillo.jpg"
+    "img": "/assets/img/estuches/Bolsa para tablas Blanco-amarillo.jpg"
   },
   {
     "id": 33,
@@ -21,7 +21,7 @@
     "precio": 2500,
     "cantidad": 1,
     "clase": "bolsa",
-    "img": "assets/img/estuches/Bolsa para tablas Blanco-dorado.jpg"
+    "img": "/assets/img/estuches/Bolsa para tablas Blanco-dorado.jpg"
   },
   {
     "id": 34,
@@ -29,7 +29,7 @@
     "precio": 2500,
     "cantidad": 1,
     "clase": "bolsa",
-    "img": "assets/img/estuches/Bolsa para tablas Blanco-Fucsia.jpg"
+    "img": "/assets/img/estuches/Bolsa para tablas Blanco-Fucsia.jpg"
   },
   {
     "id": 35,
@@ -37,7 +37,7 @@
     "precio": 2500,
     "cantidad": 1,
     "clase": "estuche",
-    "img": "assets/img/estuches/Estuche Espiga  azul -azul amarillo.jpg"
+    "img": "/assets/img/estuches/Estuche Espiga  azul -azul amarillo.jpg"
   },
   {
     "id": 36,
@@ -45,7 +45,7 @@
     "precio": 2500,
     "cantidad": 1,
     "clase": "estuche",
-    "img": "assets/img/estuches/Estuche Espiga  azul -gris amarillo.jpg"
+    "img": "/assets/img/estuches/Estuche Espiga  azul -gris amarillo.jpg"
   },
   {
     "id": 37,
@@ -53,7 +53,7 @@
     "precio": 2500,
     "cantidad": 1,
     "clase": "estuche",
-    "img": "assets/img/estuches/estuche-bastones-fondo-negro.png"
+    "img": "/assets/img/estuches/estuche-bastones-fondo-negro.png"
   },
   {
     "id": 38,
@@ -61,7 +61,7 @@
     "precio": 2500,
     "cantidad": 1,
     "clase": "estuche",
-    "img": "assets/img/estuches/estuche-bastones-marron-claro.png"
+    "img": "/assets/img/estuches/estuche-bastones-marron-claro.png"
   },
   {
     "id": 39,
@@ -69,7 +69,7 @@
     "precio": 2500,
     "cantidad": 1,
     "clase": "estuche",
-    "img": "assets/img/estuches/estuche-bastones-marron-claro-y-oscuro.png"
+    "img": "/assets/img/estuches/estuche-bastones-marron-claro-y-oscuro.png"
   },
   {
     "id": 310,
@@ -77,7 +77,7 @@
     "precio": 2500,
     "cantidad": 1,
     "clase": "estuche",
-    "img": "assets/img/estuches/estuches-para-tablas-digital-amarillo.png"
+    "img": "/assets/img/estuches/estuches-para-tablas-digital-amarillo.png"
   },
   {
     "id": 311,
@@ -85,7 +85,7 @@
     "precio": 2500,
     "cantidad": 1,
     "clase": "estuche",
-    "img": "assets/img/estuches/estuches-para-tablas-digital-bordo.png"
+    "img": "/assets/img/estuches/estuches-para-tablas-digital-bordo.png"
   },
   {
     "id": 312,
@@ -93,7 +93,7 @@
     "precio": 2500,
     "cantidad": 1,
     "clase": "estuche",
-    "img": "assets/img/estuches/estuches-para-tablas-digital-celeste.png"
+    "img": "/assets/img/estuches/estuches-para-tablas-digital-celeste.png"
   },
   {
     "id": 313,
@@ -101,7 +101,7 @@
     "precio": 2500,
     "cantidad": 1,
     "clase": "estuche",
-    "img": "assets/img/estuches/estuches-para-tablas-digital-verde.png"
+    "img": "/assets/img/estuches/estuches-para-tablas-digital-verde.png"
   },
   {
     "id": 314,
@@ -109,7 +109,7 @@
     "precio": 2500,
     "cantidad": 1,
     "clase": "estuche",
-    "img": "assets/img/estuches/estuches-para-tablas-digital-verde-y-bordo.png"
+    "img": "/assets/img/estuches/estuches-para-tablas-digital-verde-y-bordo.png"
   },
   {
     "id": 315,
@@ -117,7 +117,7 @@
     "precio": 2500,
     "cantidad": 1,
     "clase": "estuche",
-    "img": "assets/img/estuches/estuche-triangulos-amarillos.png"
+    "img": "/assets/img/estuches/estuche-triangulos-amarillos.png"
   },
   {
     "id": 316,
@@ -125,6 +125,6 @@
     "precio": 2500,
     "cantidad": 1,
     "clase": "estuche",
-    "img": "assets/img/estuches/estuche-triangulos-amarillos-1.png"
+    "img": "/assets/img/estuches/estuche-triangulos-amarillos-1.png"
   }
 ]

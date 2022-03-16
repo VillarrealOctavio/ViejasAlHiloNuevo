@@ -1,17 +1,28 @@
-li{
-    list-style-type: none;
+.bordeRedondo {
+    border-radius: 13px;
 }
 .bgMostaza{
     background-color: #D39914;
-}
-.fontMegrim, .fontMegrimNav{
-    font-family: 'Megrim', cursive;
-    font-size: 25px;
-    color: black;
-}
-.bgVerde {
+}.bgVerde {
     background-color: #08824c;
 }
-.bordeRedondo {
-    border-radius: 20px;
+.bgBlackGradient {
+    background-image: linear-gradient(to bottom, #000, #a5a58d);
+}
+.bgBeige {
+    background-color: #a5a58d;
+}
+.fontTitulo {
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 20px;
+}
+.bgBeigeGradient {
+    background-image: linear-gradient(to top, #000, #a5a58d);
+}
+a, p {
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+.btnGris {
+    background-color: #6b705c;
+    color: #fff;
 }

@@ -2,27 +2,33 @@
 let enElCarrito = [];
 
 // CONTENEDORES----------------------------------------------------------------
-const conenedorProductos = document.getElementById("contenedorProductos");
-const carritoModal = document.querySelector(".modalCarrito");
+const contenedorProductos = document.getElementById("contenedorProductos");
+const carritoModal = document.querySelector("#cuerpoModal");
 const totalPrice = document.querySelector("#precioTotal");
-const APIimg = document.querySelector(`#imgAPIs`)
 
 // CONTENEDORES PARA EVENTOS----------------------------------------------------------------
-const btn = document.getElementsByClassName("fontMegrim");
-const filtradoBolsos = document.querySelector("#filtrarBolsos");
+const btn = document.getElementsByClassName(`boton`)
+const btnMates = document.querySelector(`#botonMates`)
+const btnEstcuhes = document.querySelector(`#botonEstuches`)
+const btnLatas = document.querySelector(`#botonLatas`)
+const btnBolsos = document.querySelector(`#botonBolsos`)
+const btnFinalizar = document.querySelector(`#botonFinalizar`)
+/*const filtradoBolsos = document.querySelector("#filtrarBolsos");
 const filtradoEstuches = document.querySelector("#filtrarEstuches");
 const filtradoLatas = document.querySelector("#filtrarLatas");
 const filtradoMates = document.querySelector("#filtrarMates");
-const filtrame = document.getElementsByClassName("filtros")
+const filtrame = document.getElementsByClassName("filtros")*/
 
 // FUNCIONES
 function quitarIcono(){
   const div = document.createElement("div")
   div.id=`cargando`
   div.innerHTML = `
-           <img src="assets/img/iconos/barra-de-carga.png" alt="icono">
+        <div class="alert alert-success" role="alert">
+          Aguarde, por favor. Cargando productos...
+        </div>
       `
-  conenedorProductos.appendChild(div);
+  contenedorProductos.appendChild(div);
   const carga = document.querySelector(`#cargando`)
   setTimeout(()=>{
       carga.remove();
@@ -40,28 +46,25 @@ function showProduct(array){
 for (const boton of btn) {
     boton.addEventListener("click", () => {
       switch (boton.id) {
-        case "Mates":
-          conenedorProductos.innerHTML="";
+        case "botonMates":
+          contenedorProductos.innerHTML="";
           quitarIcono();
-          fetch(`mates.json`)
-            .then(Response => Response.json())
-            .then(data => showProduct(data))
           showProduct(stockMates)
           break;
-        case "Bolsos":
-          conenedorProductos.innerHTML="";
-          quitarIcono()
+        case "botonBolsos":
+          contenedorProductos.innerHTML="";
+          quitarIcono();
           showProduct(stockBolsos)
           break;
-        case "Estuches":
-          conenedorProductos.innerHTML="";
+        case "botonEstuches":
+          contenedorProductos.innerHTML="";
           quitarIcono();
-          showProduct(stockEstuches);
+          showProduct(stockEstuches)
           break;
-        case "Latas":
-          conenedorProductos.innerHTML="";
+        case "botonLatas":
+          contenedorProductos.innerHTML="";
           quitarIcono();
-          showProduct(stockLatas);
+          showProduct(stockLatas)
           break;  
         default:
           Swal.fire({
@@ -77,7 +80,7 @@ for (const boton of btn) {
 
 
 // Este evento es para poder realizar filtros a cada uno de los stocks de productos.
- for(const filtro of filtrame){
+ /*for(const filtro of filtrame){
      filtro.addEventListener(`change`, ()=>{
          switch (filtro.id) {
             case "filtrarEstuches":
@@ -106,30 +109,62 @@ for (const boton of btn) {
             break;
          }
      })
- }
+ }*/
+
+
+ // Función para terminar compra
+
+ btnFinalizar.addEventListener(`click`, ()=>{
+  const div = document.createElement(`div`)
+  div.innerHTML = `
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+          Launch demo modal
+        </button>
+        
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Viejas al Hilo</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                ...
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+  `
+})
 
 // FUNCIONES----------------------------------------------------------------
 // Para bolsos
 function mostrarProductos(array) {
-  console.log(array);
-  conenedorProductos.innerHTML = "";
+  contenedorProductos.innerHTML = "";
   array.forEach((el) => {
-    const { img, id, tipo } = el;
+    const { img, id, tipo, precio } = el;
     const div = document.createElement("div");
+    div.className = `col-md-3`
     div.innerHTML += `
-                <div class="card" style="width: 18rem;">
+                <div class="card m-1" style="width: 12rem;">
                     <img src="${img}" class="card-img-top" alt="imagen">
                     <div class="card-body">
                     <h5 class="card-title">${tipo}</h5>
-                    <p class="card-text">Viejas al Hilo</p>
-                    <a href="#" class="btn btn-primary" id="buyBolso${id}">Agregar al carrito de compras</a>
+                    <p class="card-text">Viejas al Hilo--$${precio}</p>
+                    <a href="#" class="btn btnGris" id="buyBolso${id}">Agregar al carrito de compras</a>
                     </div>
                 </div>
         `;
-    conenedorProductos.appendChild(div);
+    contenedorProductos.appendChild(div);
 
     let btnAgregarAlCarrito = document.querySelector(`#buyBolso${el.id}`);
-    console.log(btnAgregarAlCarrito);
+  
 
     btnAgregarAlCarrito.addEventListener(`click`, () => {
       console.log(el.id);
@@ -138,7 +173,7 @@ function mostrarProductos(array) {
         title: "Genial",
         text: "Tu compra fue agregada al carrito!",
         footer: '<a href="">Seguir</a>',
-      });
+      })
       agregarAlCarrito(el.id);
     });
   });
@@ -150,7 +185,7 @@ function agregarAlCarrito(cod) {
   let productoRepetido = enElCarrito.find((el) => el.id == cod);
   if (productoRepetido) {
     console.log("El producto está repetido en tu carrito");
-    productoRepetido.cantidad = productoRepetido.cantidad += 1;
+    productoRepetido.cantidad = productoRepetido.cantidad + 1;
     document.querySelector(
       `#cantidad${productoRepetido.id}`
     ).innerHTML = `<p id="cantidad${productoRepetido.id}">Cantidad: ${productoRepetido.cantidad}</p>`;
@@ -176,12 +211,11 @@ function verificarArray(id) {
   } else {
     agregarElProducto = stockMates.find((el) => el.id == id);
   }
-
   return agregarElProducto;
 }
 
-function mostrarElCarrito(agregarProducto) {
-  const { tipo, cantidad, id, precio } = agregarProducto;
+function mostrarElCarrito(product) {
+  const { tipo, cantidad, id, precio } = product;
   let div = document.createElement("div");
   div.className = `d-flex justify-content-around`;
   div.innerHTML = `
@@ -203,11 +237,11 @@ function mostrarElCarrito(agregarProducto) {
       confirmButtonText: "Si, sácalo!",
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire("Deleted!", "Your file has been deleted.", "success");
+        Swal.fire("Hecho!", "Tu producto ha sido eliminado.", "success");
       }
     });
     btnEliminar.parentElement.remove();
-    enElCarrito = enElCarrito.filter((el) => el.id != agregarProducto.id);
+    enElCarrito = enElCarrito.filter((el) => el.id != product.id);
     actualizarCarritoDeCompras();
     localStorage.setItem(`carritoDeCompras`, JSON.stringify(enElCarrito));
   });
@@ -220,7 +254,6 @@ function actualizarCarritoDeCompras() {
     0
   );
 }
-
 // Función para recuperar info guardada en el storage
 function recuperarData() {
   enElCarrito = JSON.parse(localStorage.getItem("carritoDeCompras")) || [];
@@ -233,38 +266,29 @@ function recuperarData() {
 }
 recuperarData();
 
-// Agregando API
-let url = `https://jsonplaceholder.typicode.com/photos`
-fetch(url)
-    .then(Response => Response.json())
-    .then(data => {
-      data.forEach(album => {
-        const {albumId, title, id, url} = album
-        const div =  document.createElement(`div`)
-        div.className= `col-md-3`
-        div.innerHTML = ` 
-            <div class="card" style="width: 18rem;">
-              <img src="${url}" class="card-img-top" alt="img">
-              <div class="card-body">
-                <h5 class="card-title">${title}</h5>
-                <p>${id}</p>
-                <p class="card-text">${albumId}</p>
-              </div>
-            </div>
-        `
-        APIimg.appendChild(div)
-      })
-    })
-    .catch(error => console.log(error))
-
-// Otra API
-let urlHero = `https://akabab.github.io/superhero-api/api/all.json`
-fetch(urlHero)
-    .then(Response => Response.json())
-    .then(data => console.log(data))
 
 
 
 
 
-    // 1:16
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
