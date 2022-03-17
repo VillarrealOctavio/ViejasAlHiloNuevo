@@ -239,10 +239,6 @@ function recuperarData() {
 }
 recuperarData();
 
-/*function totalCarrito (){
-  precioFinalCompra = enElCarrito.reduce((acc, el) => acc + (el.cantidad * el.precio),0)
-}*/
-
 // Evento para finalizar compra
 btnFinalizar.addEventListener(`click`, ()=>{
   if(enElCarrito == 0){
@@ -276,6 +272,8 @@ btnFinalizar.addEventListener(`click`, ()=>{
           'Gracias por su compra.',
           'success'
         )
+        localStorage.clear()
+        carritoModal.innerHTML = "";
       } else if (
         /* Read more about handling dismissals below */
         result.dismiss === Swal.DismissReason.cancel
