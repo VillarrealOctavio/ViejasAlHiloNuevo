@@ -1,6 +1,10 @@
 // arrays----------------------------------------------------------------
 let enElCarrito = [];
 
+// Variables-------------------------------------------------------------
+let precioFinalCompra = 0;
+
+
 // CONTENEDORES----------------------------------------------------------------
 const contenedorProductos = document.getElementById("contenedorProductos");
 const carritoModal = document.querySelector("#cuerpoModal");
@@ -111,37 +115,6 @@ for (const boton of btn) {
      })
  }*/
 
-
- // Función para terminar compra
-
- btnFinalizar.addEventListener(`click`, ()=>{
-  const div = document.createElement(`div`)
-  div.innerHTML = `
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-          Launch demo modal
-        </button>
-        
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Viejas al Hilo</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                ...
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-              </div>
-            </div>
-          </div>
-        </div>
-  `
-})
 
 // FUNCIONES----------------------------------------------------------------
 // Para bolsos
@@ -266,8 +239,56 @@ function recuperarData() {
 }
 recuperarData();
 
+/*function totalCarrito (){
+  precioFinalCompra = enElCarrito.reduce((acc, el) => acc + (el.cantidad * el.precio),0)
+}*/
 
-
+// Evento para finalizar compra
+btnFinalizar.addEventListener(`click`, ()=>{
+  if(enElCarrito == 0){
+    Swal.fire({
+      icon: 'error',
+      title: 'Opps...',
+      text: 'Tu carrito está vacio!',
+      footer: '<a href="">Volver</a>'
+    })
+  }else{
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: 'btn btn-success',
+        cancelButton: 'btn btn-danger'
+      },
+      buttonsStyling: false
+    })
+    
+    swalWithBootstrapButtons.fire({
+      title: "¿Está seguro?",
+      text: `Precio final: $${precioFinalCompra = enElCarrito.reduce((acc, el) => acc + (el.cantidad * el.precio),0)}`,
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Sí, comprar',
+      cancelButtonText: 'No, continuar!',
+      reverseButtons: true
+    }).then((result) => {
+      if (result.isConfirmed) {
+        swalWithBootstrapButtons.fire(
+          'Acción realizada!',
+          'Gracias por su compra.',
+          'success'
+        )
+      } else if (
+        /* Read more about handling dismissals below */
+        result.dismiss === Swal.DismissReason.cancel
+      ) {
+        swalWithBootstrapButtons.fire(
+          'Ouch',
+          'Sigue buscando nuevos productos en nuestra página',
+          'error'
+        )
+      }
+    })
+  }
+})
 
 
 
