@@ -117,3 +117,11 @@ const stockLatas = [
     {id:412, tipo:"Latas. Marrón", precio:500, cantidad:1, clase:"vegetal", img:"/assets/img/latas/latasmarron.jpg"}
 ];
 
+const standProductos = [
+    {id:1, img:"/assets/img/otrasImg/standDeProductos.jfif"},
+    {id:2, img:"/assets/img/otrasImg/standDeProductos2.jfif"},
+    {id:3, img:"/assets/img/otrasImg/standDeProductos3.jfif"},
+    {id:4, img:"/assets/img/otrasImg/standDeProductos4.jfif"},
+    {id:5, img:"/assets/img/otrasImg/standDeProductos5.jfif"},
+    {id:6, img:"/assets/img/otrasImg/standDeProductos6.jfif"}
+]

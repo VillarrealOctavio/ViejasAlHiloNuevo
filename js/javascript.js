@@ -9,6 +9,7 @@ let precioFinalCompra = 0;
 const contenedorProductos = document.getElementById("contenedorProductos");
 const carritoModal = document.querySelector("#cuerpoModal");
 const totalPrice = document.querySelector("#precioTotal");
+const nosotrasContainer = document.querySelector(`#contenedorNosotras`)
 
 // CONTENEDORES PARA EVENTOS----------------------------------------------------------------
 const btn = document.getElementsByClassName(`boton`)
@@ -17,11 +18,12 @@ const btnEstcuhes = document.querySelector(`#botonEstuches`)
 const btnLatas = document.querySelector(`#botonLatas`)
 const btnBolsos = document.querySelector(`#botonBolsos`)
 const btnFinalizar = document.querySelector(`#botonFinalizar`)
-/*const filtradoBolsos = document.querySelector("#filtrarBolsos");
-const filtradoEstuches = document.querySelector("#filtrarEstuches");
-const filtradoLatas = document.querySelector("#filtrarLatas");
-const filtradoMates = document.querySelector("#filtrarMates");
-const filtrame = document.getElementsByClassName("filtros")*/
+
+// FETCH API
+fetch(`/js/standProductos.json`)
+  .then(Response => Response.json())
+  .then(arreglo => mostrarStand(arreglo))
+  .catch(err => console.log(err))
 
 // FUNCIONES
 function quitarIcono(){
@@ -82,40 +84,6 @@ for (const boton of btn) {
     });
   }
 
-
-// Este evento es para poder realizar filtros a cada uno de los stocks de productos.
- /*for(const filtro of filtrame){
-     filtro.addEventListener(`change`, ()=>{
-         switch (filtro.id) {
-            case "filtrarEstuches":
-                (filtradoEstuches.value=="all")?
-                mostrarProductos(stockEstuches):mostrarProductos(stockEstuches.filter(el=>el.clase==filtradoEstuches.value)) 
-            break;
-            case "filtrarMates":
-                (filtradoMates.value=="all")?
-                mostrarProductos(stockMates):mostrarProductos(stockMates.filter(el=>el.clase==filtradoMates.value))
-            break;
-            case "filtrarLatas":
-                (filtradoLatas.value=="all")?
-                mostrarProductos(stockLatas):mostrarProductos(stockLatas.filter(el=>el.clase==filtradoLatas.value))
-            break;
-            case "filtrarBolsos":
-                (filtradoBolsos.value=="all")?
-                mostrarProductos(stockBolsos):mostrarProductos(stockBolsos.filter(el=>el.clase==filtradoBolsos.value))
-            break;
-            default:
-                    Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'Something went wrong!',
-                    footer: '<a href="">Why do I have this issue?</a>'
-                    })
-            break;
-         }
-     })
- }*/
-
-
 // FUNCIONES----------------------------------------------------------------
 // Para bolsos
 function mostrarProductos(array) {
@@ -130,7 +98,9 @@ function mostrarProductos(array) {
                     <div class="card-body">
                     <h5 class="card-title">${tipo}</h5>
                     <p class="card-text">Viejas al Hilo--$${precio}</p>
-                    <a href="#" class="btn btnGris" id="buyBolso${id}">Agregar al carrito de compras</a>
+                    <button class="btn btnGris" id="buyBolso${id}">
+                    <i class="fa-solid fa-cart-plus"></i>
+                    </button>  
                     </div>
                 </div>
         `;
@@ -151,6 +121,20 @@ function mostrarProductos(array) {
     });
   });
 }
+// ------------------------------------------------------------------------------------
+function mostrarStand (array){
+    array.forEach(el=>{
+      const {id, img} = el
+      const div = document.createElement(`div`);
+      div.className = `col-md-2`
+      div.innerHTML = `
+          <img src="${img}" class="img-thumbnail imgNosotras m-1" id="img${id}" alt="img">
+      `
+      nosotrasContainer.appendChild(div)
+    })
+}
+
+
 // Una vez terminada la parte de los productos, es necesario realizar una función que me relacione cada uno de ellos con el carrito
 
 // function agregarAlCarrito 
@@ -195,7 +179,7 @@ function mostrarElCarrito(product) {
             <p>${tipo}</p>
             <p>Precio: $${precio}</p>
             <p id="cantidad${id}">Cantidad: ${cantidad}</p>
-            <button id="eliminar${id}">Eliminar</button>
+            <button id="eliminar${id}"><i class="fa-solid fa-trash"></i></button>
     `;
   carritoModal.appendChild(div);
   const btnEliminar = document.querySelector(`#eliminar${id}`);
@@ -240,7 +224,7 @@ function recuperarData() {
 recuperarData();
 
 // Evento para finalizar compra
-btnFinalizar.addEventListener(`click`, ()=>{
+btnFinalizar.addEventListener(`click`, () => {
   if(enElCarrito == 0){
     Swal.fire({
       icon: 'error',
@@ -274,8 +258,9 @@ btnFinalizar.addEventListener(`click`, ()=>{
         )
         localStorage.clear()
         carritoModal.innerHTML = "";
+        enElCarrito = [];
+        actualizarCarritoDeCompras()
       } else if (
-        /* Read more about handling dismissals below */
         result.dismiss === Swal.DismissReason.cancel
       ) {
         swalWithBootstrapButtons.fire(

@@ -26,3 +26,17 @@ a, p {
     background-color: #6b705c;
     color: #fff;
 }
+.imgNosotras {
+    height: 200px;
+    width: 200px;
+}
+.negrita {
+    font-weight:bolder;
+}
+.fa-store {
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    background-color: #000;
+}
+
